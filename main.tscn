@@ -24,6 +24,7 @@ script = ExtResource("3_pr1q2")
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(-25.4457, 1.81721)
 limit_left = 0
+limit_top = 0
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
