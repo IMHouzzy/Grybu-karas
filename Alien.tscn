@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://du3we6tq74vfe"]
+[gd_scene load_steps=14 format=3 uid="uid://c4gp86aacdhip"]
 
 [ext_resource type="Script" path="res://PlayerControllerAlien.gd" id="1_wp7h1"]
 [ext_resource type="Texture2D" uid="uid://dfbpxvglh8du6" path="res://Nuotraukos/Character3/Squat1.png" id="2_ys0ra"]
@@ -75,7 +75,7 @@ size = Vector2(46, 72)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5awxe"]
 size = Vector2(46.5, 39)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_wp7h1")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]

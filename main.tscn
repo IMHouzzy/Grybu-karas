@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cargfjow3uovt"]
 
-[ext_resource type="PackedScene" uid="uid://du3we6tq74vfe" path="res://Alien.tscn" id="2_h65lq"]
+[ext_resource type="PackedScene" uid="uid://c4gp86aacdhip" path="res://Alien.tscn" id="2_h65lq"]
 [ext_resource type="Texture2D" uid="uid://dsd3dd3o8d2td" path="res://Assets/tile_0000.png" id="2_pv1wt"]
 [ext_resource type="PackedScene" uid="uid://d176ig682bq0h" path="res://Assets/Enemies/tower_mushroom.tscn" id="3_da0ig"]
 
