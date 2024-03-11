@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdag8yjmaivyx"
-path="res://.godot/imported/basic-1.png (1).png-24da82459dd3762aeaf8277c157cefc7.ctex"
+uid="uid://cpiiw88dkvwqx"
+path="res://.godot/imported/Stand2.png-6c74d2143f6c71c230df10f474944ebc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Charecter/basic-1.png (1).png"
-dest_files=["res://.godot/imported/basic-1.png (1).png-24da82459dd3762aeaf8277c157cefc7.ctex"]
+source_file="res://Nuotraukos/Character2/Stand2.png"
+dest_files=["res://.godot/imported/Stand2.png-6c74d2143f6c71c230df10f474944ebc.ctex"]
 
 [params]
 

@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cargfjow3uovt"]
+[gd_scene load_steps=5 format=3 uid="uid://cargfjow3uovt"]
 
-[ext_resource type="PackedScene" uid="uid://b86t4mjmkgsiu" path="res://character_body_2d.tscn" id="1_u7gjg"]
+[ext_resource type="PackedScene" uid="uid://cgqqi3q22hkyw" path="res://BlueGirl.tscn" id="2_n5huu"]
 [ext_resource type="Texture2D" uid="uid://dsd3dd3o8d2td" path="res://Assets/tile_0000.png" id="2_pv1wt"]
-[ext_resource type="Script" path="res://PlayerControler.gd" id="3_pr1q2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6lbcp"]
 texture = ExtResource("2_pv1wt")
@@ -17,18 +16,18 @@ sources/0 = SubResource("TileSetAtlasSource_6lbcp")
 
 [node name="Node2D" type="Node"]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_u7gjg")]
-position = Vector2(25.4457, -1.81721)
-script = ExtResource("3_pr1q2")
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(-25.4457, 1.81721)
-limit_left = 0
-limit_top = 0
-
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
 scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_x4fqj")
 format = 2
-layer_0/tile_data = PackedInt32Array(458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458773, 0, 0, 458774, 0, 0, 262158, 0, 0, 262159, 0, 0, 262160, 0, 0, 131090, 0, 0, 131091, 0, 0, 131092, 0, 0, 327693, 0, 0)
+layer_0/tile_data = PackedInt32Array(458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458773, 0, 0, 458774, 0, 0, 262158, 0, 0, 262159, 0, 0, 262160, 0, 0, 327693, 0, 0, 458775, 0, 0, 458776, 0, 0, 458777, 0, 0, 458778, 0, 0, 458779, 0, 0, 458780, 0, 0, 458781, 0, 0, 458782, 0, 0, 458783, 0, 0, 458784, 0, 0, 458785, 0, 0, 458786, 0, 0, 262165, 0, 0, 262166, 0, 0, 262167, 0, 0, 262168, 0, 0, 262171, 0, 0, 262172, 0, 0, 262173, 0, 0, 262174, 0, 0, 262178, 0, 0, 262179, 0, 0, 262180, 0, 0, 458787, 0, 0, 458788, 0, 0, 458789, 0, 0, 458790, 0, 0, 458791, 0, 0)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_n5huu")]
+position = Vector2(158, 276)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(-162, -275)
+anchor_mode = 0
+limit_left = 0
+limit_top = 0
