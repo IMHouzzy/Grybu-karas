@@ -34,4 +34,4 @@ limit_left = 0
 limit_top = 0
 
 [node name="TowerMushroom" parent="." instance=ExtResource("3_da0ig")]
-position = Vector2(605, 314)
+position = Vector2(315, 320)
