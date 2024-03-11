@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 var SPEED = 400.0 #Character speed
-var JUMP_VELOCITY = -550.0 #Jump hight
-var  DOUBLE_JUMP_VELOCITY = -400 #Second jump hight
+var JUMP_VELOCITY = -450 #Jump hight
+var  DOUBLE_JUMP_VELOCITY = -350 #Second jump hight
 
 var jumps_made = 0 #jump counter
 var max_jumps = 2 # max jumps that character can make (galima keisti jeigu reikia)
@@ -13,30 +13,47 @@ var max_jumps = 2 # max jumps that character can make (galima keisti jeigu reiki
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _physics_process(delta):
+	
+	# Add the gravity.
+	if not is_on_floor():
+		velocity.y += gravity * delta
+		
 	#Animations
-	if(velocity.x>1 || velocity.x<-1):
+	if(velocity.x>1 || velocity.x<-1) and is_on_floor() :
 		sprite_2d.animation = "Running"
-	else:
+	elif is_on_floor():
 		sprite_2d.animation = "idle"
+	if Input.is_action_pressed("jump") and not is_on_floor():
+		sprite_2d.animation = "jumping"
 		#Checks if duck button is pressed and if the player is unther the object
+	
+		
 	if Input.is_action_pressed("crouch") or RightCheckAbove.is_colliding() or LeftCheckAbove.is_colliding():
-		sprite_2d.animation = "Crouching"
-		#Swiches to crouching collider
-		$NormalColision.disabled = true
-		$CrouchingColision.disabled = false
-		SPEED = 200 
-		JUMP_VELOCITY = -250 
-		DOUBLE_JUMP_VELOCITY = -200 
+		if not is_zero_approx(velocity.x):
+			sprite_2d.animation = "CrouchWalking"
+			$NormalColision.disabled = true
+			$CrouchingColision.disabled = false
+			SPEED = 200 
+			JUMP_VELOCITY = -250 
+			DOUBLE_JUMP_VELOCITY = -200
+		elif is_zero_approx(velocity.x):
+			sprite_2d.animation = "Crouching"
+			#Swiches to crouching collider
+			$NormalColision.disabled = true
+			$CrouchingColision.disabled = false
+			SPEED = 200 
+			JUMP_VELOCITY = -250 
+			DOUBLE_JUMP_VELOCITY = -200
+			
 	else:
 		#Swiches back to normal collider
 		$NormalColision.disabled = false
 		$CrouchingColision.disabled = true
 		SPEED = 400.0
-		JUMP_VELOCITY = -550.0
-		DOUBLE_JUMP_VELOCITY = -400
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y += gravity * delta
+		JUMP_VELOCITY = -450
+		DOUBLE_JUMP_VELOCITY = -350
+		
+	
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
