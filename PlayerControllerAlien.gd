@@ -44,6 +44,7 @@ func _physics_process(delta):
 			SPEED = 150
 			JUMP_VELOCITY = -500
 			DOUBLE_JUMP_VELOCITY = -400
+			
 	else:
 		#Swiches back to normal collider
 		$NormalColision.disabled = false
@@ -51,6 +52,8 @@ func _physics_process(delta):
 		SPEED = 300.0
 		JUMP_VELOCITY = -700
 		DOUBLE_JUMP_VELOCITY = -600
+		
+	
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -85,4 +88,3 @@ func _physics_process(delta):
 		sprite_2d.flip_h = true
 	elif Input.is_action_pressed("move_right"):
 		sprite_2d.flip_h = false
-

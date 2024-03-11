@@ -84,6 +84,7 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_g0sec")
 animation = &"CrouchWalking"
 autoplay = "idle"
+frame_progress = 0.375468
 
 [node name="NormalColision" type="CollisionShape2D" parent="."]
 position = Vector2(-3, 0)

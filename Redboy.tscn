@@ -83,7 +83,7 @@ script = ExtResource("1_88rxm")
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_np7qr")
-animation = &"jumping"
+animation = &"Running"
 autoplay = "idle"
 
 [node name="NormalColision" type="CollisionShape2D" parent="."]
