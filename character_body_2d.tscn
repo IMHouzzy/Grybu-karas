@@ -81,9 +81,8 @@ size = Vector2(38.5, 39)
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_np7qr")
-animation = &"CrouchWalking"
+animation = &"Running"
 autoplay = "idle"
-frame_progress = 0.766665
 
 [node name="NormalColision" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)
@@ -96,9 +95,9 @@ disabled = true
 debug_color = Color(0.964706, 0.133333, 0.345098, 0.419608)
 
 [node name="RightCheckAbove" type="RayCast2D" parent="."]
-position = Vector2(19, 0)
+position = Vector2(16, 0)
 target_position = Vector2(0, -45)
 
 [node name="LeftCheckAbove" type="RayCast2D" parent="."]
-position = Vector2(-15, 0)
+position = Vector2(-10.805, 0)
 target_position = Vector2(0, -45)

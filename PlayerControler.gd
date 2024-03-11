@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-var SPEED = 400.0 #Character speed
-var JUMP_VELOCITY = -450 #Jump hight
-var  DOUBLE_JUMP_VELOCITY = -350 #Second jump hight
+var SPEED = 300.0 #Character speed
+var JUMP_VELOCITY = -700 #Jump hight
+var  DOUBLE_JUMP_VELOCITY = -600 #Second jump hight
 
 var jumps_made = 0 #jump counter
 var max_jumps = 2 # max jumps that character can make (galima keisti jeigu reikia)
@@ -33,25 +33,25 @@ func _physics_process(delta):
 			sprite_2d.animation = "CrouchWalking"
 			$NormalColision.disabled = true
 			$CrouchingColision.disabled = false
-			SPEED = 200 
-			JUMP_VELOCITY = -250 
-			DOUBLE_JUMP_VELOCITY = -200
+			SPEED = 150
+			JUMP_VELOCITY = -500
+			DOUBLE_JUMP_VELOCITY = -400
 		elif is_zero_approx(velocity.x):
 			sprite_2d.animation = "Crouching"
 			#Swiches to crouching collider
 			$NormalColision.disabled = true
 			$CrouchingColision.disabled = false
-			SPEED = 200 
-			JUMP_VELOCITY = -250 
-			DOUBLE_JUMP_VELOCITY = -200
+			SPEED = 150
+			JUMP_VELOCITY = -500
+			DOUBLE_JUMP_VELOCITY = -400
 			
 	else:
 		#Swiches back to normal collider
 		$NormalColision.disabled = false
 		$CrouchingColision.disabled = true
-		SPEED = 400.0
-		JUMP_VELOCITY = -450
-		DOUBLE_JUMP_VELOCITY = -350
+		SPEED = 300.0
+		JUMP_VELOCITY = -700
+		DOUBLE_JUMP_VELOCITY = -600
 		
 	
 
