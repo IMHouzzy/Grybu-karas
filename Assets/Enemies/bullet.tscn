@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bryuyskn0s48a"]
 
 [ext_resource type="Script" path="res://Assets/Enemies/Bullet.gd" id="1_6gf22"]
-[ext_resource type="Texture2D" uid="uid://b224bdvgowx1c" path="res://Assets/bullet.png" id="1_a71b5"]
+[ext_resource type="Texture2D" uid="uid://b224bdvgowx1c" path="res://Assets/Nuotraukos/Mushroom1/bullet.png" id="1_a71b5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sksxw"]
 size = Vector2(14, 8)

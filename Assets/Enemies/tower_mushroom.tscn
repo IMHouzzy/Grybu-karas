@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://d176ig682bq0h"]
+[gd_scene load_steps=5 format=3 uid="uid://d176ig682bq0h"]
 
 [ext_resource type="Script" path="res://Assets/Enemies/tower_mushroom.gd" id="1_8qyh7"]
-[ext_resource type="Texture2D" uid="uid://coi21arfqxgn" path="res://Nuotraukos/Mushroom1/Nejudantis.png" id="1_pf6xe"]
+[ext_resource type="Texture2D" uid="uid://coi21arfqxgn" path="res://Assets/Nuotraukos/Mushroom1/Nejudantis.png" id="1_pf6xe"]
 [ext_resource type="PackedScene" uid="uid://bryuyskn0s48a" path="res://Assets/Enemies/bullet.tscn" id="2_nykd2"]
 
-[node name="TowerMushroom" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqlf6"]
+size = Vector2(29, 54)
+
+[node name="TowerMushroom" type="CharacterBody2D"]
 script = ExtResource("1_8qyh7")
 ammo = ExtResource("2_nykd2")
 
@@ -18,5 +21,9 @@ target_position = Vector2(250, 0)
 
 [node name="ReloadTimer" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_dqlf6")
 
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
