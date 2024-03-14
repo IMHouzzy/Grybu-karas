@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://mk6s8ngwkm0u"]
+
+[ext_resource type="Texture2D" uid="uid://didgtfvxiypdh" path="res://crystal_01c.png" id="1_jip7r"]
+
+[node name="CollectablesPh" type="Node2D"]
+
+[node name="DiamondPlaceholder" type="Sprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(393, 262)
+texture = ExtResource("1_jip7r")
+
+[node name="DiamondPlaceholder2" type="Sprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(623, 502)
+texture = ExtResource("1_jip7r")
+
+[node name="DiamondPlaceholder3" type="Sprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(93, 585)
+texture = ExtResource("1_jip7r")
+
+[node name="DiamondPlaceholder4" type="Sprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(761, 171)
+texture = ExtResource("1_jip7r")
+
+[node name="DiamondPlaceholder5" type="Sprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(827, 332)
+texture = ExtResource("1_jip7r")
