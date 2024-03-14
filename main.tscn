@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c4gp86aacdhip" path="res://Assets/MainPlayer/Alien.tscn" id="2_h65lq"]
 [ext_resource type="Texture2D" uid="uid://dsd3dd3o8d2td" path="res://Assets/tile_0000.png" id="2_pv1wt"]
 [ext_resource type="PackedScene" uid="uid://d176ig682bq0h" path="res://Assets/Enemies/tower_mushroom.tscn" id="3_da0ig"]
-[ext_resource type="PackedScene" uid="uid://e0cgfi7sailu" path="res://Assets/Enemies/basic_angry_shroom.tscn" id="4_akbuv"]
+[ext_resource type="PackedScene" path="res://Assets/Enemies/basic_angry_shroom.tscn" id="4_akbuv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6lbcp"]
 texture = ExtResource("2_pv1wt")
@@ -23,13 +23,13 @@ texture_filter = 1
 scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_x4fqj")
 format = 2
-layer_0/tile_data = PackedInt32Array(458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458773, 0, 0, 458774, 0, 0, 262158, 0, 0, 262159, 0, 0, 262160, 0, 0, 327693, 0, 0, 458775, 0, 0, 458776, 0, 0, 458777, 0, 0, 458778, 0, 0, 458779, 0, 0, 458780, 0, 0, 458781, 0, 0, 458782, 0, 0, 458783, 0, 0, 458784, 0, 0, 458785, 0, 0, 458786, 0, 0, 262165, 0, 0, 262166, 0, 0, 262167, 0, 0, 262168, 0, 0, 262171, 0, 0, 262172, 0, 0, 262173, 0, 0, 262174, 0, 0, 262178, 0, 0, 262179, 0, 0, 262180, 0, 0, 458787, 0, 0, 458788, 0, 0, 458789, 0, 0, 458790, 0, 0, 458791, 0, 0)
+layer_0/tile_data = PackedInt32Array(458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458773, 0, 0, 458774, 0, 0, 262158, 0, 0, 262159, 0, 0, 262160, 0, 0, 327693, 0, 0, 458775, 0, 0, 458776, 0, 0, 458777, 0, 0, 458778, 0, 0, 458779, 0, 0, 458780, 0, 0, 458781, 0, 0, 458782, 0, 0, 458783, 0, 0, 458784, 0, 0, 458785, 0, 0, 458786, 0, 0, 262165, 0, 0, 262166, 0, 0, 262167, 0, 0, 262168, 0, 0, 262171, 0, 0, 262172, 0, 0, 262173, 0, 0, 262174, 0, 0, 262178, 0, 0, 262179, 0, 0, 262180, 0, 0, 458787, 0, 0, 458788, 0, 0, 458789, 0, 0, 458790, 0, 0, 458791, 0, 0, 262161, 0, 0, 262162, 0, 0, 262163, 0, 0, 262164, 0, 0, 262169, 0, 0)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_h65lq")]
-position = Vector2(48, 303)
+position = Vector2(148, 303)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(-52, -302)
+position = Vector2(-159, -304)
 anchor_mode = 0
 limit_left = 0
 limit_top = 0

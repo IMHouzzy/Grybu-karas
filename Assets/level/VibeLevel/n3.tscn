@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://cnq6b4cn5v68q"]
 
-[ext_resource type="Texture2D" uid="uid://cwlty8th4pb76" path="res://back.png" id="1_nhuwv"]
-[ext_resource type="Texture2D" uid="uid://d3dgq8tl1hpxb" path="res://tileset.png" id="2_66ves"]
-[ext_resource type="Texture2D" uid="uid://nbgqbvbipokb" path="res://props.png" id="3_t38vr"]
+[ext_resource type="Texture2D" uid="uid://bd7nheqficwag" path="res://Assets/level/VibeLevel/back.png" id="1_nhuwv"]
+[ext_resource type="Texture2D" uid="uid://c6y2pfok5efun" path="res://Assets/level/VibeLevel/tileset.png" id="2_66ves"]
+[ext_resource type="Texture2D" uid="uid://bx40ssxij3rms" path="res://Assets/level/VibeLevel/props.png" id="3_t38vr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e1ffu"]
 texture = ExtResource("2_66ves")

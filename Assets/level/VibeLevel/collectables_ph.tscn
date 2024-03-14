@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://mk6s8ngwkm0u"]
 
-[ext_resource type="Texture2D" uid="uid://didgtfvxiypdh" path="res://crystal_01c.png" id="1_jip7r"]
+[ext_resource type="Texture2D" uid="uid://d2d7fg085qhfm" path="res://Assets/level/VibeLevel/crystal_01c.png" id="1_jip7r"]
 
 [node name="CollectablesPh" type="Node2D"]
 

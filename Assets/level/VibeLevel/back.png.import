@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpuq4fcg2jelt"
-path="res://.godot/imported/StandRight.png-a896913487f4d799c7ed9f0b472c5405.ctex"
+uid="uid://bd7nheqficwag"
+path="res://.godot/imported/back.png-27e7e891715338c6301737a4bdcb533d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://StandRight.png"
-dest_files=["res://.godot/imported/StandRight.png-a896913487f4d799c7ed9f0b472c5405.ctex"]
+source_file="res://Assets/level/VibeLevel/back.png"
+dest_files=["res://.godot/imported/back.png-27e7e891715338c6301737a4bdcb533d.ctex"]
 
 [params]
 
