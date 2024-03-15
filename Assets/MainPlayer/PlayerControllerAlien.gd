@@ -88,3 +88,4 @@ func _physics_process(delta):
 		sprite_2d.flip_h = true
 	elif Input.is_action_pressed("move_right"):
 		sprite_2d.flip_h = false
+	
