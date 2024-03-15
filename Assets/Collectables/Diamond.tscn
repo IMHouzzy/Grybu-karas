@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://jbjidyom5vnx"]
+
+[ext_resource type="Texture2D" uid="uid://d2d7fg085qhfm" path="res://Assets/level/VibeLevel/crystal_01c.png" id="1_0nda2"]
+[ext_resource type="Script" path="res://Assets/Collectables/Diamond.gd" id="1_yjveq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ixmi7"]
+radius = 8.0
+
+[node name="Diamond" type="Area2D"]
+script = ExtResource("1_yjveq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_0nda2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ixmi7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
