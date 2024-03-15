@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=3 uid="uid://ckha5ii8kwavl"]
+
+[ext_resource type="PackedScene" uid="uid://c4gp86aacdhip" path="res://Assets/MainPlayer/Alien.tscn" id="3_s7mf3"]
+[ext_resource type="Texture2D" uid="uid://b5cq1ka4a7xom" path="res://Assets/level/tutorial1/1.png" id="4_st4iw"]
+[ext_resource type="Texture2D" uid="uid://dawkjqhl2bjit" path="res://Assets/level/tutorial1/2.png" id="5_vm2ac"]
+[ext_resource type="Texture2D" uid="uid://c361pamrm0kch" path="res://Assets/level/tutorial1/3.png" id="6_vhwmq"]
+[ext_resource type="Texture2D" uid="uid://dsr12g5yx3q2s" path="res://Assets/level/tutorial1/10.png" id="7_2eoau"]
+[ext_resource type="Texture2D" uid="uid://llj5k2mwtm02" path="res://Assets/level/tutorial1/5.png" id="8_gnio6"]
+[ext_resource type="Texture2D" uid="uid://dftk1ctk23v4e" path="res://Assets/level/tutorial1/8.png" id="9_8aots"]
+
+[sub_resource type="TileSet" id="TileSet_aca4q"]
+physics_layer_0/collision_layer = 1
+
+[node name="TutorialLevel1" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(0, -8)
+tile_set = SubResource("TileSet_aca4q")
+format = 2
+layer_0/tile_data = PackedInt32Array(2424828, 196608, 1, 2424829, 196608, 1, 2424830, 196608, 1, 2424831, 196608, 1, 2359296, 196608, 1, 2359297, 196608, 1, 2359298, 196608, 1, 2359299, 196608, 1, 2359300, 196608, 1, 2359301, 196608, 1, 2359302, 196608, 1, 2359303, 196608, 1, 2359304, 196608, 1, 2359305, 196608, 1, 2359306, 196608, 1, 2359307, 196608, 1, 2359308, 196608, 1, 2359309, 196608, 1, 2359310, 196608, 1, 2359311, 196608, 1, 2359312, 196608, 1, 2359313, 196608, 1, 2359314, 196608, 1, 2359315, 196608, 1, 2359316, 196608, 1, 2359317, 196608, 1, 2359318, 196608, 1, 2359319, 196608, 1, 2359320, 196608, 1, 2359321, 196608, 1, 2359322, 196608, 1, 2359323, 196608, 1, 2359324, 196608, 1, 2359325, 196608, 1, 2359326, 196608, 1, 2359327, 196608, 1, 2359328, 196608, 1, 2359329, 196608, 1, 2359330, 196608, 1, 2359331, 196608, 1, 2359332, 196608, 1, 2359333, 196608, 1, 2359334, 196608, 1, 2359335, 196608, 1, 2359336, 196608, 1, 2359337, 196608, 1, 2359338, 196608, 1, 2359339, 196608, 1, 2359340, 196608, 1, 2359341, 196608, 1, 2359342, 196608, 1, 2359343, 196608, 1, 2359344, 196608, 1, 2359345, 196608, 1, 2359346, 196608, 1, 2359347, 196608, 1, 2359348, 196608, 1, 2359349, 196608, 1, 2359350, 196608, 1, 2359351, 196608, 1, 2359352, 196608, 1, 2359353, 196608, 1, 2359354, 196608, 1, 2359355, 196608, 1, 2359356, 196608, 1, 2359357, 196608, 1, 2359358, 196608, 1, 2359359, 196608, 1, 2359360, 196608, 1, 2359361, 196608, 1, 2359362, 196608, 1, 2359363, 196608, 1, 2359364, 196608, 1, 2359365, 196608, 1, 2359366, 196608, 1, 2359367, 196608, 1, 2359368, 196608, 1, 2359369, 196608, 1, 2359370, 196608, 1, 2359371, 196608, 1, 2359372, 196608, 1, 2359373, 196608, 1, 2359374, 196608, 1, 2359375, 196608, 1, 2359376, 196608, 1, 2359377, 196608, 1, 2359378, 196608, 1, 2359379, 196608, 1, 2359380, 196608, 1, 2359381, 196608, 1, 2359382, 196608, 1, 2359383, 196608, 1, 2359384, 196608, 1, 2359385, 196608, 1, 2359386, 196608, 1, 2359387, 196608, 1, 2359388, 196608, 1, 2359389, 196608, 1, 2359390, 196608, 1, 2359391, 196608, 1, 2359392, 196608, 1, 2359393, 196608, 1, 2359394, 196608, 1, 2359395, 196608, 1, 2359396, 196608, 1, 2359397, 196608, 1, 2359398, 196608, 1, 2359399, 196608, 1, 2359400, 196608, 1, 2359401, 196608, 1, 2359402, 196608, 1, 2359403, 196608, 1, 2359404, 196608, 1, 2359405, 196608, 1, 2359406, 196608, 1, 2359407, 196608, 1, 2359408, 196608, 1, 2359409, 196608, 1, 2359410, 196608, 1, 2359411, 196608, 1, 2359412, 196608, 1, 2359413, 196608, 1, 2359414, 196608, 1, 2359415, 196608, 1, 2359416, 196608, 1, 2359417, 196608, 1, 2359418, 196608, 1, 2359419, 196608, 1, 2359420, 196608, 1, 2359421, 196608, 1, 2359422, 196608, 1, 2359423, 196608, 1, 2359424, 196608, 1, 2359425, 196608, 1, 2359426, 196608, 1, 2359427, 196608, 1, 2359428, 196608, 1, 2359429, 196608, 1, 2359430, 196608, 1, 2359431, 196608, 1, 2359432, 196608, 1, 2359433, 196608, 1, 2359434, 196608, 1, 2359435, 196608, 1, 2359436, 196608, 1, 2359437, 196608, 1, 2359438, 196608, 1, 2359439, 196608, 1, 2359440, 196608, 1, 2359441, 196608, 1, 2359442, 196608, 1, 2359443, 196608, 1)
+metadata/_edit_lock_ = true
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_s7mf3")]
+position = Vector2(10, 526)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scale = Vector2(0.7, 0.7)
+transform = Transform2D(0.7, 0, 0, 0.7, 0, 0)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1725, 0)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(790, 430)
+scale = Vector2(3, 2.996)
+texture = ExtResource("4_st4iw")
+metadata/_edit_lock_ = true
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1725, 0)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(460, 350)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_vm2ac")
+metadata/_edit_lock_ = true
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1725, 0)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(790, 430)
+scale = Vector2(3, 3)
+texture = ExtResource("6_vhwmq")
+metadata/_edit_lock_ = true
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1725, 0)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(790, 430)
+scale = Vector2(3, 3)
+texture = ExtResource("7_2eoau")
+metadata/_edit_lock_ = true
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1725, 0)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+position = Vector2(790, 430)
+scale = Vector2(3, 3)
+texture = ExtResource("8_gnio6")
+metadata/_edit_lock_ = true
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1725, 0)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
+position = Vector2(790, 430)
+scale = Vector2(3, 3)
+texture = ExtResource("9_8aots")
+metadata/_edit_lock_ = true
