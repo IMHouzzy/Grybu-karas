@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var ledgeCheckRight: = $LedgeCheckRight
 
 #Variables
-var speed = 0.75
+var speed = 175 #Change this if need some tweaking
 var player_chase = false
 var player = null
 var gravity = 700
@@ -20,10 +20,15 @@ func _physics_process(delta):
 			direction *= -1 #This changes the direction the enemy goes, making him go back possible bug
 		
 		#Calculates the speed
-		velocity = (player.global_position - global_position) * speed * direction
-		velocity.y += gravity
-		move_and_slide()
+		#Calculate the direction of the enemies movement
+		var target_direction = (player.global_position - global_position).normalized()
+		
+		#Set the velocity at a constant speed
+		velocity = target_direction * speed * direction
+		velocity.y += gravity #Falling
+		
 		$Sprite2D.play("Walking")
+		move_and_slide()
 		
 		#Flip the animation if going left
 		if(player.position.x -position.x) < 0:

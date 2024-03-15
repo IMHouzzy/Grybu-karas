@@ -815,6 +815,8 @@ sources/1 = SubResource("TileSetAtlasSource_6an3v")
 
 [node name="Node2D" type="Node"]
 
+[node name="HUD" parent="." instance=ExtResource("8_efov4")]
+
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
 anchors_preset = 15
@@ -876,5 +878,3 @@ position = Vector2(593, 699)
 
 [node name="Diamond6" parent="." instance=ExtResource("7_t3rwm")]
 position = Vector2(233, 639)
-
-[node name="HUD" parent="." instance=ExtResource("8_efov4")]
