@@ -66,11 +66,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y0kwp"]
-size = Vector2(46, 72)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_diw0w"]
+radius = 15.0
+height = 72.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5awxe"]
-size = Vector2(46.5, 39)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jdbh3"]
+radius = 13.75
+height = 42.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
 collision_layer = 3
@@ -84,17 +86,17 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="NormalColision" type="CollisionShape2D" parent="."]
-position = Vector2(-3, 0)
-shape = SubResource("RectangleShape2D_y0kwp")
+position = Vector2(-3, 1)
+shape = SubResource("CapsuleShape2D_diw0w")
 
 [node name="CrouchingColision" type="CollisionShape2D" parent="."]
-position = Vector2(-2.75, 16)
-shape = SubResource("RectangleShape2D_5awxe")
+position = Vector2(-2, 16)
+shape = SubResource("CapsuleShape2D_jdbh3")
 disabled = true
 debug_color = Color(0.964706, 0.133333, 0.345098, 0.419608)
 
 [node name="RightCheckAbove" type="RayCast2D" parent="."]
-position = Vector2(12.805, 3)
+position = Vector2(10.595, 3)
 target_position = Vector2(0, -45)
 
 [node name="LeftCheckAbove" type="RayCast2D" parent="."]
