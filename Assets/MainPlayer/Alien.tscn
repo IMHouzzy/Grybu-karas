@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c4gp86aacdhip"]
+[gd_scene load_steps=15 format=3 uid="uid://c4gp86aacdhip"]
 
 [ext_resource type="Script" path="res://Assets/MainPlayer/PlayerControllerAlien.gd" id="1_wp7h1"]
 [ext_resource type="Texture2D" uid="uid://dfbpxvglh8du6" path="res://Assets/Nuotraukos/Character3/Squat1.png" id="2_ys0ra"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://tf7oflsrf6j0" path="res://Assets/Nuotraukos/Character3/Stand.png" id="8_tbqvu"]
 [ext_resource type="Texture2D" uid="uid://b4oeim2710qla" path="res://Assets/Nuotraukos/Character3/Stand2.png" id="9_qdr84"]
 [ext_resource type="Texture2D" uid="uid://rq6pqber8lgy" path="res://Assets/Nuotraukos/Character3/Jump.png" id="10_htje3"]
+[ext_resource type="PackedScene" uid="uid://c2uu63oycih8t" path="res://Assets/Weapons/gun.tscn" id="11_u87dk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6acrb"]
 animations = [{
@@ -102,3 +103,5 @@ target_position = Vector2(0, -45)
 [node name="LeftCheckAbove" type="RayCast2D" parent="."]
 position = Vector2(-14, 3)
 target_position = Vector2(0, -45)
+
+[node name="gun" parent="." instance=ExtResource("11_u87dk")]
