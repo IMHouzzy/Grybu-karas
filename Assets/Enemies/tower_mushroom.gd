@@ -3,7 +3,7 @@ extends Node2D
 @onready var rayCast = $RayCast2D
 @onready var timer = $ReloadTimer
 @export var ammo: PackedScene
-var loots = preload("res://Assets/Collectables/Diamond.tscn")
+var loots = preload("res://Assets/Collectables/Coin.tscn")
 
 var health = 100
 var player 
@@ -18,12 +18,18 @@ func _ready():
 func _physics_process(delta):
 	_aim()
 	_check_player_collision()
+	if timer.is_stopped():
+			$Sprite2D.animation = "Idle"
 
 #Shoots bullet towards player
 func _aim():
 	var direction_to_player = player.global_position - global_position
 	if direction_to_player.length() <= maxDistanceRayCast:
 		rayCast.target_position = to_local(player.position)
+		if direction_to_player.x < 0:
+			$Sprite2D.flip_h = true
+		else:
+			$Sprite2D.flip_h = false
 	else:
 		rayCast.target_position = Vector2.ZERO
 
@@ -41,9 +47,10 @@ func _on_reload_timer_timeout():
 #Shoots bullet
 func _shoot():
 	var bullet = ammo.instantiate()
-	bullet.position = position
+	bullet.position = $BulletPoint.global_position #Fix this
 	bullet.direction = (rayCast.target_position).normalized()
 	get_tree().current_scene.add_child(bullet)
+	$Sprite2D.animation = "Attack"
 
 #Take damage function
 func take_damage(damage):

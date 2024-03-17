@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var ledgeCheckLeft: = $LedgeCheckLeft
 @onready var ledgeCheckRight: = $LedgeCheckRight
-var loots = preload("res://Assets/Collectables/Diamond.tscn")
+var loots = preload("res://Assets/Collectables/Coin.tscn")
 #Variables
 var health = 500
 var speed = 175 #Change this if need some tweaking
