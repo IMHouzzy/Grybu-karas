@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var ledgeCheckLeft: = $LedgeCheckLeft
 @onready var ledgeCheckRight: = $LedgeCheckRight
-
+var loots = preload("res://Assets/Collectables/Diamond.tscn")
 #Variables
 var health = 500
 var speed = 175 #Change this if need some tweaking
@@ -56,3 +56,39 @@ func take_damage(damage):
 	health -= damage
 	if health < 0:
 		queue_free()
+		spawn_loot()
+
+
+#Spawns loot
+func spawn_loot():
+	var random_ammount = randf_range(2,4)
+	var loot_radius = 20
+	for i in range(random_ammount):
+		var loot_instance = loots.instantiate()
+		loot_instance.position = find_empty_position(loot_radius)
+		get_tree().get_root().add_child(loot_instance)
+
+
+
+
+#Handles spawning logic, but there is a problem with spawning inside walls
+func find_empty_position(radius):
+	var position = Vector2.ZERO
+	var tries = 0
+	while tries < 10:
+		position.x = global_position.x + randf_range(-radius, radius)
+		position.y = global_position.y + randf_range(-radius, radius)
+		
+		var overlapping = false
+		for child in get_tree().get_root().get_children():
+			if child != self and child.is_in_group("Collectible"):
+				var distance_squared = child.global_position.distance_squared_to(position)
+				if distance_squared < radius * radius:
+					overlapping = true
+					break
+			
+		if not overlapping:
+			return position
+		
+		tries += 1
+	return position
