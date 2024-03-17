@@ -4,6 +4,7 @@ extends Node2D
 @onready var timer = $ReloadTimer
 @export var ammo: PackedScene
 
+var health = 100
 var player 
 var currentEntity = position
 var maxDistanceRayCast = 300
@@ -42,3 +43,9 @@ func _shoot():
 	bullet.position = position
 	bullet.direction = (rayCast.target_position).normalized()
 	get_tree().current_scene.add_child(bullet)
+
+#Take damage function
+func take_damage(damage):
+	health -= damage
+	if health < 0:
+		queue_free()

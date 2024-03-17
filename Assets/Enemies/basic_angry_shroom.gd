@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var ledgeCheckRight: = $LedgeCheckRight
 
 #Variables
+var health = 500
 var speed = 175 #Change this if need some tweaking
 var player_chase = false
 var player = null
@@ -49,3 +50,9 @@ func _on_detection_body_entered(body):
 func _on_detection_body_exited(body):
 	player = null
 	player_chase = false
+
+#Handles the taking damage logic
+func take_damage(damage):
+	health -= damage
+	if health < 0:
+		queue_free()
