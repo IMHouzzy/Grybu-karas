@@ -29,7 +29,8 @@ func _physics_process(delta):
 	
 		
 	if Input.is_action_pressed("crouch") or RightCheckAbove.is_colliding() or LeftCheckAbove.is_colliding():
-		if not is_zero_approx(velocity.x):
+		if (velocity.x>1 || velocity.x<-1):
+			print("chrouchwalking")
 			sprite_2d.animation = "CrouchWalking"
 			$NormalColision.disabled = true
 			$CrouchingColision.disabled = false
@@ -37,6 +38,7 @@ func _physics_process(delta):
 			JUMP_VELOCITY = -500
 			DOUBLE_JUMP_VELOCITY = -400
 		elif is_zero_approx(velocity.x):
+			print("chrouch")
 			sprite_2d.animation = "Crouching"
 			#Swiches to crouching collider
 			$NormalColision.disabled = true
