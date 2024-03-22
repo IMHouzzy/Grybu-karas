@@ -27,7 +27,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"CrouchWalking",
-"speed": 3.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -52,7 +52,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Running",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -90,9 +90,8 @@ texture_filter = 1
 position = Vector2(-1, 9)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_6acrb")
-animation = &"CrouchWalking"
+animation = &"Running"
 autoplay = "idle"
-frame_progress = 0.623734
 
 [node name="NormalColision" type="CollisionShape2D" parent="."]
 position = Vector2(-3, 7)
