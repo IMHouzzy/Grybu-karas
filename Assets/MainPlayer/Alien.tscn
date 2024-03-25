@@ -112,4 +112,3 @@ position = Vector2(-13, 15)
 target_position = Vector2(0, -15)
 
 [node name="gun" parent="." instance=ExtResource("11_u87dk")]
-position = Vector2(-2, 14)

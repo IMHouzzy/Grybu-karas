@@ -16,12 +16,6 @@ func _ready():
 func _physics_process(delta):
 	#The poiter always rotates in mouse derection
 	look_at(get_global_mouse_position())
-	if global_rotation_degrees >= 90 or global_rotation_degrees <= -90:
-		$Sprite2D.flip_v = true
-		$Sprite2D.position.y = -7
-	else: 
-		$Sprite2D.flip_v = false
-		$Sprite2D.position.y = 7
 	# imput fire is left mouse button
 	if Input.is_action_pressed("fire ") and can_fire: 
 			create_bullet_instance()
