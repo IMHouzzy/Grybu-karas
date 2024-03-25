@@ -130,3 +130,9 @@ func applyHealthIncreasePowerUp():
 	if Global.increasedHealth == true:
 		updateHealthGUI()
 		Global.increasedHealth = false
+func pick(item):
+	match item:
+		"gun":
+			var gun_instance = preload("res://Assets/Weapons/gun.tscn").instantiate()
+			add_child(gun_instance)
+			gun_instance.global_position = global_position

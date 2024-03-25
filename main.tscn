@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cargfjow3uovt"]
+[gd_scene load_steps=14 format=3 uid="uid://cargfjow3uovt"]
 
 [ext_resource type="Texture2D" uid="uid://bd7nheqficwag" path="res://Assets/level/VibeLevel/back.png" id="1_f5jk6"]
 [ext_resource type="PackedScene" uid="uid://c4gp86aacdhip" path="res://Assets/MainPlayer/Alien.tscn" id="2_h65lq"]
@@ -6,9 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://d176ig682bq0h" path="res://Assets/Enemies/tower_mushroom.tscn" id="3_da0ig"]
 [ext_resource type="Texture2D" uid="uid://bx40ssxij3rms" path="res://Assets/level/VibeLevel/props.png" id="3_xb3ht"]
 [ext_resource type="PackedScene" uid="uid://e0cgfi7sailu" path="res://Assets/Enemies/basic_angry_shroom.tscn" id="4_akbuv"]
-[ext_resource type="PackedScene" uid="uid://jbjidyom5vnx" path="res://Assets/Collectables/Coin.tscn" id="7_t3rwm"]
+[ext_resource type="PackedScene" path="res://Assets/Collectables/Coin.tscn" id="7_t3rwm"]
 [ext_resource type="PackedScene" uid="uid://bu4k6mgydw5kn" path="res://Assets/HUDs/CoinHUD.tscn" id="8_efov4"]
-[ext_resource type="PackedScene" uid="uid://ddvjh63sga1dt" path="res://Assets/Collectables/health_increase_pu.tscn" id="9_mreri"]
+[ext_resource type="PackedScene" uid="uid://cxeep4djkig6m" path="res://Assets/Weapons/Gun pickup/pickup_uzi.tscn" id="9_1p2x7"]
+[ext_resource type="PackedScene" path="res://Assets/Collectables/health_increase_pu.tscn" id="9_mreri"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e1ffu"]
 texture = ExtResource("2_se4ls")
@@ -885,3 +886,6 @@ position = Vector2(870, 703)
 
 [node name="HealthIncreasePU3" parent="." instance=ExtResource("9_mreri")]
 position = Vector2(923, 706)
+
+[node name="Pickup_uzi" parent="." instance=ExtResource("9_1p2x7")]
+position = Vector2(510, 741)
