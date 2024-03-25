@@ -1,19 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://bryuyskn0s48a"]
 
 [ext_resource type="Script" path="res://Assets/Enemies/Bullet.gd" id="1_6gf22"]
-[ext_resource type="Texture2D" uid="uid://b224bdvgowx1c" path="res://Assets/Nuotraukos/Mushroom1/bullet.png" id="1_a71b5"]
+[ext_resource type="Texture2D" uid="uid://cno7rf25vtreb" path="res://Assets/Nuotraukos/Details/Bullet1.png" id="2_j5aae"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sksxw"]
-size = Vector2(14, 8)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ks0yg"]
+radius = 8.0
 
-[node name="Bullet" type="Area2D"]
+[node name="Bullet" type="Area2D" groups=["EnemyBullet"]]
 script = ExtResource("1_6gf22")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_a71b5")
+texture_filter = 1
+scale = Vector2(0.4375, 0.4375)
+texture = ExtResource("2_j5aae")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_sksxw")
+shape = SubResource("CircleShape2D_ks0yg")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 

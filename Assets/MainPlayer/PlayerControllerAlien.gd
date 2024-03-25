@@ -4,12 +4,16 @@ var SPEED = 300.0 #Character speed
 var JUMP_VELOCITY = -700 #Jump hight
 var  DOUBLE_JUMP_VELOCITY = -600 #Second jump hight
 
+
 var jumps_made = 0 #jump counter
 var max_jumps = 2 # max jumps that character can make (galima keisti jeigu reikia)
 @onready var sprite_2d = $Sprite2D #calling the picture (sprite of a character)
 @onready var RightCheckAbove =$RightCheckAbove #Check if there is an objec above player head on the right on the colider
 @onready var LeftCheckAbove =$LeftCheckAbove #Check if there is an objec above player head on the left on the colider
+@export var maxHealth = 1
+@onready var currentHealth: int = maxHealth
 
+var heartsContainer
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _physics_process(delta):
@@ -19,41 +23,26 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 		
 	#Animations
-	if(velocity.x>1 || velocity.x<-1) and is_on_floor() :
-		sprite_2d.animation = "Running"
-	elif is_on_floor():
-		sprite_2d.animation = "idle"
-	if Input.is_action_pressed("jump") and not is_on_floor():
-		sprite_2d.animation = "jumping"
-		#Checks if duck button is pressed and if the player is unther the object
-	
-		
+	#Checks if duck button is pressed and if the player is under the object
 	if Input.is_action_pressed("crouch") or RightCheckAbove.is_colliding() or LeftCheckAbove.is_colliding():
 		if not is_zero_approx(velocity.x):
 			sprite_2d.animation = "CrouchWalking"
-			$NormalColision.disabled = true
-			$CrouchingColision.disabled = false
-			SPEED = 150
-			JUMP_VELOCITY = -500
-			DOUBLE_JUMP_VELOCITY = -400
-		elif is_zero_approx(velocity.x):
+		else:
 			sprite_2d.animation = "Crouching"
-			#Swiches to crouching collider
-			$NormalColision.disabled = true
-			$CrouchingColision.disabled = false
-			SPEED = 150
-			JUMP_VELOCITY = -500
-			DOUBLE_JUMP_VELOCITY = -400
-			
-	else:
+		#Swiches to crouching collider
+		_crouchingcollison()
+	elif Input.is_action_pressed("jump") and  is_on_floor():
+		sprite_2d.animation = "jumping"
 		#Swiches back to normal collider
-		$NormalColision.disabled = false
-		$CrouchingColision.disabled = true
-		SPEED = 300.0
-		JUMP_VELOCITY = -700
-		DOUBLE_JUMP_VELOCITY = -600
-		
-	
+		_normalcollison()
+	elif (Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right")) and (velocity.x>1 || velocity.x<-1) and is_on_floor():
+		sprite_2d.animation = "Running"
+		#Swiches back to normal collider
+		_normalcollison()
+	elif is_on_floor():
+		sprite_2d.animation = "idle"
+		#Swiches back to normal collider
+		_normalcollison()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -88,3 +77,39 @@ func _physics_process(delta):
 		sprite_2d.flip_h = true
 	elif Input.is_action_pressed("move_right"):
 		sprite_2d.flip_h = false
+		
+	#Setting for normal collision
+func _normalcollison():
+	$HurtBox/HitBoxNormal.disabled = false
+	$HurtBox/HitBoxCrouch.disabled = true
+	$NormalColision.disabled = false
+	$CrouchingColision.disabled = true
+	SPEED = 300.0
+	JUMP_VELOCITY = -700
+	DOUBLE_JUMP_VELOCITY = -600
+	#Setting for crouching collision
+func _crouchingcollison():
+	$HurtBox/HitBoxNormal.disabled = true
+	$HurtBox/HitBoxCrouch.disabled = false
+	$NormalColision.disabled = true
+	$CrouchingColision.disabled = false
+	SPEED = 150
+	JUMP_VELOCITY = -500
+	DOUBLE_JUMP_VELOCITY = -400
+
+
+
+func _ready():
+	heartsContainer = $heartsContainer
+	heartsContainer.setMaxHearts(3)
+	updateHealthGUI()
+
+func updateHealthGUI():
+	heartsContainer.updateHearts(currentHealth, maxHealth)
+
+#Takes damage when hit by bullet
+func _on_hurt_box_area_entered(area):
+	if area.is_in_group("EnemyBullet"):
+		currentHealth -= 1
+		print(currentHealth)
+	updateHealthGUI()
