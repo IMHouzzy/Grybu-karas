@@ -10,14 +10,12 @@ var max_jumps = 2 # max jumps that character can make (galima keisti jeigu reiki
 @onready var sprite_2d = $Sprite2D #calling the picture (sprite of a character)
 @onready var RightCheckAbove =$RightCheckAbove #Check if there is an objec above player head on the right on the colider
 @onready var LeftCheckAbove =$LeftCheckAbove #Check if there is an objec above player head on the left on the colider
-@export var maxHealth = 1
-@onready var currentHealth: int = maxHealth
-
+#@onready var maxHealth = Global.maxHealth
+#@onready var currentHealth = Global.currentHealth
 var heartsContainer
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _physics_process(delta):
-	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -79,6 +77,10 @@ func _physics_process(delta):
 		sprite_2d.flip_h = false
 		
 	#Setting for normal collision
+	
+	#Adds back 1 heart when picked up
+	applyHealthIncreasePowerUp()
+
 func _normalcollison():
 	$HurtBox/HitBoxNormal.disabled = false
 	$HurtBox/HitBoxCrouch.disabled = true
@@ -98,18 +100,41 @@ func _crouchingcollison():
 	DOUBLE_JUMP_VELOCITY = -400
 
 
-
+#Sets up health
 func _ready():
 	heartsContainer = $heartsContainer
-	heartsContainer.setMaxHearts(3)
+	heartsContainer.setMaxHearts(Global.maxHealth)
 	updateHealthGUI()
 
+#Updates the health container to display correct hearts
 func updateHealthGUI():
-	heartsContainer.updateHearts(currentHealth, maxHealth)
+	heartsContainer.updateHearts(Global.currentHealth)
+
+#Handles the damage taking logic
+func healthDamage(takenDamage: int):
+	Global.currentHealth -= 1
+	print(Global.currentHealth)
+	updateHealthGUI()
+	if Global.currentHealth <= 0:
+		print("dead") #Change to quee free when respawn allowed
 
 #Takes damage when hit by bullet
 func _on_hurt_box_area_entered(area):
+	var takenDamage
 	if area.is_in_group("EnemyBullet"):
-		currentHealth -= 1
-		print(currentHealth)
-	updateHealthGUI()
+		takenDamage = 1
+		healthDamage(takenDamage)
+
+#Checks global variable if health power-up was picked up
+func applyHealthIncreasePowerUp():
+	if Global.increasedHealth == true:
+		updateHealthGUI()
+		Global.increasedHealth = false
+
+
+func pick(item):
+	match item:
+		"gun":
+			var gun_instance = preload("res://Assets/Weapons/gun.tscn").instantiate()
+			add_child(gun_instance)
+			gun_instance.global_position = global_position

@@ -1,8 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://c4gp86aacdhip"]
+[gd_scene load_steps=18 format=3 uid="uid://c4gp86aacdhip"]
 
 [ext_resource type="Script" path="res://Assets/MainPlayer/PlayerControllerAlien.gd" id="1_wp7h1"]
 [ext_resource type="Texture2D" uid="uid://bop4vu5rxbsgi" path="res://Assets/Nuotraukos/Character3/Squat3.png" id="2_pev4b"]
-[ext_resource type="PackedScene" path="res://Assets/HUDs/hearts_container.tscn" id="2_rad1q"]
+[ext_resource type="PackedScene" uid="uid://b0j4wx2v4snqx" path="res://Assets/HUDs/hearts_container.tscn" id="2_rad1q"]
 [ext_resource type="Texture2D" uid="uid://dfbpxvglh8du6" path="res://Assets/Nuotraukos/Character3/Squat1.png" id="2_ys0ra"]
 [ext_resource type="Texture2D" uid="uid://cdb81uej1a1va" path="res://Assets/Nuotraukos/Character3/Squat2.png" id="3_jdcf2"]
 [ext_resource type="Texture2D" uid="uid://se45tajoo6tk" path="res://Assets/Nuotraukos/Character3/Run1.png" id="4_6u727"]
@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://tf7oflsrf6j0" path="res://Assets/Nuotraukos/Character3/Stand.png" id="8_tbqvu"]
 [ext_resource type="Texture2D" uid="uid://b4oeim2710qla" path="res://Assets/Nuotraukos/Character3/Stand2.png" id="9_qdr84"]
 [ext_resource type="Texture2D" uid="uid://rq6pqber8lgy" path="res://Assets/Nuotraukos/Character3/Jump.png" id="10_htje3"]
-[ext_resource type="PackedScene" uid="uid://c2uu63oycih8t" path="res://Assets/Weapons/gun.tscn" id="11_u87dk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6acrb"]
 animations = [{
@@ -92,7 +91,6 @@ radius = 15.0
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
 collision_layer = 3
 script = ExtResource("1_wp7h1")
-maxHealth = 4
 
 [node name="heartsContainer" parent="." instance=ExtResource("2_rad1q")]
 
@@ -111,8 +109,6 @@ target_position = Vector2(0, -15)
 [node name="LeftCheckAbove" type="RayCast2D" parent="."]
 position = Vector2(-13, 15)
 target_position = Vector2(0, -15)
-
-[node name="gun" parent="." instance=ExtResource("11_u87dk")]
 
 [node name="NormalColision" type="CollisionShape2D" parent="."]
 position = Vector2(-3, 7)
