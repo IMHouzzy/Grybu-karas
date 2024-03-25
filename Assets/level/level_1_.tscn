@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dgprq8kgrdmp6"]
+[gd_scene load_steps=12 format=3 uid="uid://bhf1p366lxdsc"]
 
 [ext_resource type="Texture2D" uid="uid://c6y2pfok5efun" path="res://Assets/level/VibeLevel/tileset.png" id="1_ujn02"]
 [ext_resource type="Texture2D" uid="uid://bx40ssxij3rms" path="res://Assets/level/VibeLevel/props.png" id="2_hd7v7"]
