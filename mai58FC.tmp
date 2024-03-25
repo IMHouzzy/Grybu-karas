@@ -1,6 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://cargfjow3uovt"]
+[gd_scene load_steps=14 format=3 uid="uid://cargfjow3uovt"]
 
 [ext_resource type="Texture2D" uid="uid://bd7nheqficwag" path="res://Assets/level/VibeLevel/back.png" id="1_f5jk6"]
+[ext_resource type="Script" path="res://main.gd" id="1_i8rc8"]
+[ext_resource type="PackedScene" uid="uid://b0j4wx2v4snqx" path="res://Assets/HUDs/hearts_container.tscn" id="2_arf1b"]
 [ext_resource type="PackedScene" uid="uid://c4gp86aacdhip" path="res://Assets/MainPlayer/Alien.tscn" id="2_h65lq"]
 [ext_resource type="Texture2D" uid="uid://c6y2pfok5efun" path="res://Assets/level/VibeLevel/tileset.png" id="2_se4ls"]
 [ext_resource type="PackedScene" uid="uid://d176ig682bq0h" path="res://Assets/Enemies/tower_mushroom.tscn" id="3_da0ig"]
@@ -814,8 +816,12 @@ sources/0 = SubResource("TileSetAtlasSource_e1ffu")
 sources/1 = SubResource("TileSetAtlasSource_6an3v")
 
 [node name="Node2D" type="Node"]
+script = ExtResource("1_i8rc8")
 
 [node name="HUD" parent="." instance=ExtResource("8_efov4")]
+
+[node name="heartsContainer" parent="HUD" instance=ExtResource("2_arf1b")]
+offset_right = 52.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1

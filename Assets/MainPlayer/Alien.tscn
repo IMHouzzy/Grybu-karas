@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://c4gp86aacdhip"]
+[gd_scene load_steps=19 format=3 uid="uid://c4gp86aacdhip"]
 
 [ext_resource type="Script" path="res://Assets/MainPlayer/PlayerControllerAlien.gd" id="1_wp7h1"]
 [ext_resource type="Texture2D" uid="uid://bop4vu5rxbsgi" path="res://Assets/Nuotraukos/Character3/Squat3.png" id="2_pev4b"]
+[ext_resource type="PackedScene" uid="uid://b0j4wx2v4snqx" path="res://Assets/HUDs/hearts_container.tscn" id="2_rad1q"]
 [ext_resource type="Texture2D" uid="uid://dfbpxvglh8du6" path="res://Assets/Nuotraukos/Character3/Squat1.png" id="2_ys0ra"]
 [ext_resource type="Texture2D" uid="uid://cdb81uej1a1va" path="res://Assets/Nuotraukos/Character3/Squat2.png" id="3_jdcf2"]
 [ext_resource type="Texture2D" uid="uid://se45tajoo6tk" path="res://Assets/Nuotraukos/Character3/Run1.png" id="4_6u727"]
@@ -81,9 +82,19 @@ height = 58.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jdbh3"]
 radius = 15.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wl2ep"]
+radius = 15.0
+height = 58.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r7iwl"]
+radius = 15.0
+
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
 collision_layer = 3
 script = ExtResource("1_wp7h1")
+maxHealth = 4
+
+[node name="heartsContainer" parent="." instance=ExtResource("2_rad1q")]
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -92,6 +103,16 @@ scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_6acrb")
 animation = &"Running"
 autoplay = "idle"
+
+[node name="RightCheckAbove" type="RayCast2D" parent="."]
+position = Vector2(6, 15)
+target_position = Vector2(0, -15)
+
+[node name="LeftCheckAbove" type="RayCast2D" parent="."]
+position = Vector2(-13, 15)
+target_position = Vector2(0, -15)
+
+[node name="gun" parent="." instance=ExtResource("11_u87dk")]
 
 [node name="NormalColision" type="CollisionShape2D" parent="."]
 position = Vector2(-3, 7)
@@ -103,12 +124,14 @@ shape = SubResource("CapsuleShape2D_jdbh3")
 disabled = true
 debug_color = Color(0.964706, 0.133333, 0.345098, 0.419608)
 
-[node name="RightCheckAbove" type="RayCast2D" parent="."]
-position = Vector2(6, 15)
-target_position = Vector2(0, -15)
+[node name="HurtBox" type="Area2D" parent="."]
 
-[node name="LeftCheckAbove" type="RayCast2D" parent="."]
-position = Vector2(-13, 15)
-target_position = Vector2(0, -15)
+[node name="HitBoxNormal" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(-3, 7)
+shape = SubResource("CapsuleShape2D_wl2ep")
 
-[node name="gun" parent="." instance=ExtResource("11_u87dk")]
+[node name="HitBoxCrouch" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(-3, 21)
+shape = SubResource("CircleShape2D_r7iwl")
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
