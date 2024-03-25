@@ -17,5 +17,10 @@ func setMaxHearts(max: int):
 		add_child(heart)
 
 #Add code here for it to work
-func updateHearts(currentHealth: int, maxHealth: int):
-	pass
+func updateHearts(currentHealth: int):
+	var hearts = get_children()
+	
+	for i in range(currentHealth):
+		hearts[i].update(true)
+	for i in range(currentHealth, hearts.size()):
+		hearts[i].update(false)
