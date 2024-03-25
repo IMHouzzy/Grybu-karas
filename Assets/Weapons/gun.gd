@@ -21,6 +21,12 @@ func _physics_process(delta):
 			create_bullet_instance()
 			timer.start()
 			can_fire = false
+	if global_rotation_degrees >= 90 or global_rotation_degrees <= -90:
+		$Sprite2D.flip_v = true
+		$Sprite2D.position.y = -7
+	else: 
+		$Sprite2D.flip_v = false
+		$Sprite2D.position.y = 7
 			
 	# Check if the timer has expired
 	if timer.is_stopped() and !can_fire:
