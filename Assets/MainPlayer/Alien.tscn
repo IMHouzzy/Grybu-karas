@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Assets/MainPlayer/PlayerControllerAlien.gd" id="1_wp7h1"]
 [ext_resource type="Texture2D" uid="uid://bop4vu5rxbsgi" path="res://Assets/Nuotraukos/Character3/Squat3.png" id="2_pev4b"]
-[ext_resource type="PackedScene" path="res://Assets/HUDs/hearts_container.tscn" id="2_rad1q"]
+[ext_resource type="PackedScene" uid="uid://b0j4wx2v4snqx" path="res://Assets/HUDs/hearts_container.tscn" id="2_rad1q"]
 [ext_resource type="Texture2D" uid="uid://dfbpxvglh8du6" path="res://Assets/Nuotraukos/Character3/Squat1.png" id="2_ys0ra"]
 [ext_resource type="Texture2D" uid="uid://cdb81uej1a1va" path="res://Assets/Nuotraukos/Character3/Squat2.png" id="3_jdcf2"]
 [ext_resource type="Texture2D" uid="uid://se45tajoo6tk" path="res://Assets/Nuotraukos/Character3/Run1.png" id="4_6u727"]

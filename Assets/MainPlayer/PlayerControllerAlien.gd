@@ -130,6 +130,8 @@ func applyHealthIncreasePowerUp():
 	if Global.increasedHealth == true:
 		updateHealthGUI()
 		Global.increasedHealth = false
+
+
 func pick(item):
 	match item:
 		"gun":
