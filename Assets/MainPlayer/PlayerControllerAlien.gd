@@ -10,7 +10,7 @@ var max_jumps = 2 # max jumps that character can make (galima keisti jeigu reiki
 @onready var sprite_2d = $Sprite2D #calling the picture (sprite of a character)
 @onready var RightCheckAbove =$RightCheckAbove #Check if there is an objec above player head on the right on the colider
 @onready var LeftCheckAbove =$LeftCheckAbove #Check if there is an objec above player head on the left on the colider
-@export var maxHealth = 1
+@export var maxHealth: int #
 @onready var currentHealth: int = maxHealth
 
 var heartsContainer
@@ -98,18 +98,27 @@ func _crouchingcollison():
 	DOUBLE_JUMP_VELOCITY = -400
 
 
-
+#Sets up health
 func _ready():
 	heartsContainer = $heartsContainer
-	heartsContainer.setMaxHearts(3)
+	heartsContainer.setMaxHearts(maxHealth)
 	updateHealthGUI()
 
+#Updates the health container to display correct hearts
 func updateHealthGUI():
-	heartsContainer.updateHearts(currentHealth, maxHealth)
+	heartsContainer.updateHearts(currentHealth)
+
+#Handles the damage taking logic
+func healthDamage(takenDamage: int):
+	currentHealth -= 1
+	print(currentHealth)
+	updateHealthGUI()
+	if currentHealth <= 0:
+		print("dead") #Change to quee free when respawn allowed
 
 #Takes damage when hit by bullet
 func _on_hurt_box_area_entered(area):
+	var takenDamage
 	if area.is_in_group("EnemyBullet"):
-		currentHealth -= 1
-		print(currentHealth)
-	updateHealthGUI()
+		takenDamage = 1
+		healthDamage(takenDamage)
