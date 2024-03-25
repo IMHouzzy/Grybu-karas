@@ -80,6 +80,8 @@ func _physics_process(delta):
 	
 	#Adds back 1 heart when picked up
 	applyHealthIncreasePowerUp()
+	
+	applyHealthCapacityPowerUp()
 
 func _normalcollison():
 	$HurtBox/HitBoxNormal.disabled = false
@@ -131,6 +133,12 @@ func applyHealthIncreasePowerUp():
 		updateHealthGUI()
 		Global.increasedHealth = false
 
+#Checks if global variable if health capacity is picked up
+func applyHealthCapacityPowerUp():
+	if Global.increasedCapacity == true:
+		heartsContainer.setMaxHearts(1)
+		updateHealthGUI()
+		Global.increasedCapacity = false
 
 func pick(item):
 	match item:

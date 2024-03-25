@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmgdh7wyw5uux"]
+
+[ext_resource type="Texture2D" uid="uid://do2yvo7p6vj4k" path="res://Assets/Nuotraukos/Details/Hearth34.png" id="1_jlcdj"]
+
+[sub_resource type="GDScript" id="GDScript_4jo0n"]
+script/source = "extends Area2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+#Adds additional Heart 
+func _on_body_entered(body):
+	if body.is_in_group(\"player\"):
+		if Global.maxHealth < 6:
+			Global.maxHealth += 1
+			Global.increasedCapacity = true
+			print(Global.maxHealth)
+			queue_free()
+		else:
+			queue_free()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mleet"]
+size = Vector2(37, 36)
+
+[node name="HealthCapacityPU" type="Area2D"]
+script = SubResource("GDScript_4jo0n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_jlcdj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_mleet")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
