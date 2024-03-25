@@ -4,12 +4,16 @@ var SPEED = 300.0 #Character speed
 var JUMP_VELOCITY = -700 #Jump hight
 var  DOUBLE_JUMP_VELOCITY = -600 #Second jump hight
 
+
 var jumps_made = 0 #jump counter
 var max_jumps = 2 # max jumps that character can make (galima keisti jeigu reikia)
 @onready var sprite_2d = $Sprite2D #calling the picture (sprite of a character)
 @onready var RightCheckAbove =$RightCheckAbove #Check if there is an objec above player head on the right on the colider
 @onready var LeftCheckAbove =$LeftCheckAbove #Check if there is an objec above player head on the left on the colider
+@export var maxHealth = 1
+@onready var currentHealth: int = maxHealth
 
+var heartsContainer
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _physics_process(delta):
@@ -76,6 +80,8 @@ func _physics_process(delta):
 		
 	#Setting for normal collision
 func _normalcollison():
+	$HurtBox/HitBoxNormal.disabled = false
+	$HurtBox/HitBoxCrouch.disabled = true
 	$NormalColision.disabled = false
 	$CrouchingColision.disabled = true
 	SPEED = 300.0
@@ -83,8 +89,27 @@ func _normalcollison():
 	DOUBLE_JUMP_VELOCITY = -600
 	#Setting for crouching collision
 func _crouchingcollison():
+	$HurtBox/HitBoxNormal.disabled = true
+	$HurtBox/HitBoxCrouch.disabled = false
 	$NormalColision.disabled = true
 	$CrouchingColision.disabled = false
 	SPEED = 150
 	JUMP_VELOCITY = -500
 	DOUBLE_JUMP_VELOCITY = -400
+
+
+
+func _ready():
+	heartsContainer = $heartsContainer
+	heartsContainer.setMaxHearts(3)
+	updateHealthGUI()
+
+func updateHealthGUI():
+	heartsContainer.updateHearts(currentHealth, maxHealth)
+
+#Takes damage when hit by bullet
+func _on_hurt_box_area_entered(area):
+	if area.is_in_group("EnemyBullet"):
+		currentHealth -= 1
+		print(currentHealth)
+	updateHealthGUI()
