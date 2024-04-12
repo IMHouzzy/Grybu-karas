@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d176ig682bq0h"]
+[gd_scene load_steps=13 format=3 uid="uid://d176ig682bq0h"]
 
 [ext_resource type="Script" path="res://Assets/Enemies/tower_mushroom.gd" id="1_8qyh7"]
 [ext_resource type="Texture2D" uid="uid://coi21arfqxgn" path="res://Assets/Nuotraukos/Mushroom1/Nejudantis.png" id="1_pf6xe"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c6mxud3wk402c" path="res://Assets/Nuotraukos/Mushroom1/Nejudantis_3.png" id="5_2sur7"]
 [ext_resource type="AudioStream" uid="uid://d1ilpo0fu0h7j" path="res://Assets/Sound effects/Tower mushroom shot.mp3" id="8_gwbv3"]
 [ext_resource type="AudioStream" uid="uid://37nte7c531oo" path="res://Assets/Sound effects/Tower mushroom hit.mp3" id="9_2fvqr"]
+[ext_resource type="AudioStream" uid="uid://b1024cucaey7n" path="res://Assets/Sound effects/Weapon hit.mp3" id="10_xbp3t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dge1y"]
 animations = [{
@@ -63,7 +64,6 @@ frame_progress = 0.415535
 target_position = Vector2(250, 0)
 
 [node name="ReloadTimer" type="Timer" parent="."]
-wait_time = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0)
@@ -79,6 +79,10 @@ attenuation = 2.82843
 
 [node name="TowerHit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_2fvqr")
+volume_db = -5.0
+
+[node name="Hitbullet" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_xbp3t")
 volume_db = -5.0
 
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]

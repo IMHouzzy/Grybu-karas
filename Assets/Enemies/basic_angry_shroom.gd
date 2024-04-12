@@ -2,6 +2,9 @@ extends CharacterBody2D
 
 @onready var ledgeCheckLeft: = $LedgeCheckLeft
 @onready var ledgeCheckRight: = $LedgeCheckRight
+
+@onready var hit: = $Hit
+@onready var hitbullet: = $Hitbullet
 var loots = preload("res://Assets/Collectables/Coin.tscn")
 #Variables
 var health = 600
@@ -54,9 +57,14 @@ func _on_detection_body_exited(body):
 #Handles the taking damage logic
 func take_damage(damage):
 	health -= damage
+	hitbullet.play()
+	hit.play()
 	if health < 0:
-		queue_free()
 		spawn_loot()
+		set_visibility_layer_bit(0,false) #Makes it invisible so it works, but cant interact
+		await get_tree().create_timer(1).timeout
+		queue_free()
+		
 
 
 #Spawns loot

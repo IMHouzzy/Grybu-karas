@@ -12,6 +12,7 @@ var max_jumps = 2 # max jumps that character can make (galima keisti jeigu reiki
 @onready var LeftCheckAbove =$LeftCheckAbove #Check if there is an objec above player head on the left on the colider
 @onready var RunningSound =$Running
 @onready var JumpSound = $Jump
+@onready var CroucingSound = $Crouching
 var heartsContainer
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -25,17 +26,22 @@ func _physics_process(delta):
 	if Input.is_action_pressed("crouch") or RightCheckAbove.is_colliding() or LeftCheckAbove.is_colliding():
 		if not is_zero_approx(velocity.x):
 			sprite_2d.animation = "CrouchWalking"
+			if not CroucingSound.playing:
+				CroucingSound.play()
 		else:
+			CroucingSound.stop()
 			sprite_2d.animation = "Crouching"
 		#Swiches to crouching collider
 		_crouchingcollison()
 	elif Input.is_action_pressed("jump") and  is_on_floor():
 		sprite_2d.animation = "jumping"
 		RunningSound.stop()
+		CroucingSound.stop()
 		#Swiches back to normal collider
 		_normalcollison()
 	elif (Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right")) and (velocity.x>1 || velocity.x<-1) and is_on_floor():
 		sprite_2d.animation = "Running"
+		CroucingSound.stop()
 		#Swiches back to normal collider
 		_normalcollison()
 		if not RunningSound.playing:
@@ -44,6 +50,8 @@ func _physics_process(delta):
 		sprite_2d.animation = "idle"
 		if RunningSound.playing:
 			RunningSound.stop()
+		if CroucingSound.playing:
+			CroucingSound.stop()
 		#Swiches back to normal collider
 		_normalcollison()
 
@@ -121,7 +129,7 @@ func updateHealthGUI():
 
 #Handles the damage taking logic
 func healthDamage(takenDamage: int):
-	if(Global.invincibility == true):
+	if(Global.invincibility == true): #If power up is picked up the player cannot take damge for 10s 
 		Global.currentHealth -= 0
 	else:
 		Global.currentHealth -= 1

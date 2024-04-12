@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://by4i7x0ce8rsy"]
+[gd_scene load_steps=5 format=3 uid="uid://5pob72o6aehs"]
 
 [ext_resource type="Script" path="res://Assets/Collectables/damage_increase_pu.gd" id="1_h62vp"]
 [ext_resource type="Texture2D" uid="uid://ddstyl8o2mlqp" path="res://Assets/Nuotraukos/Details/damagePU.jpg" id="1_l1y6f"]
+[ext_resource type="AudioStream" uid="uid://bx8x8bwyjm2c1" path="res://Assets/Sound effects/power-up.mp3" id="3_y2131"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uc31w"]
 size = Vector2(26, 25)
@@ -20,6 +21,9 @@ shape = SubResource("RectangleShape2D_uc31w")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 13.0
 one_shot = true
+
+[node name="Powerup" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_y2131")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,6 +1,7 @@
 extends Area2D
 
-
+@onready var Powerup = $Powerup
+var pick:bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -8,11 +9,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if pick:
+		Powerup.play()
+		pick =false
 
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
+		pick = true
 		$Timer.start() #Starts a timer
 		print("Timer for [INVINCIBILITY] started")
 		Global.invincibility = true

@@ -7,6 +7,7 @@ var increasedHealth: bool = false
 var increasedCapacity: bool = false
 var increasedDamage: bool = false
 var invincibility: bool = false
+
 #If coin collected add 1
 func collectedCurrency():
 	currency += 1

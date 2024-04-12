@@ -144,4 +144,8 @@ stream = ExtResource("14_c3gp0")
 volume_db = -5.0
 pitch_scale = 1.1
 
+[node name="Crouching" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_3j8eo")
+pitch_scale = 0.62
+
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

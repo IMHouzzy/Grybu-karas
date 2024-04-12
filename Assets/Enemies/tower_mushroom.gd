@@ -7,6 +7,7 @@ var loots = preload("res://Assets/Collectables/Coin.tscn")
 
 @onready var Shoot = $TowerShoot
 @onready var Hit = $TowerHit
+@onready var Hitbullet = $Hitbullet
 
 var health = 100
 var player 
@@ -59,8 +60,11 @@ func _shoot():
 func take_damage(damage):
 	health -= damage
 	Hit.play()
+	Hitbullet.play()
 	if health < 0:
 		spawn_loot()
+		set_visibility_layer_bit(0,false) #Makes it invisible so it works, but cant interact
+		await get_tree().create_timer(1).timeout
 		queue_free()
 
 #Spawns loot 
