@@ -44,7 +44,8 @@ func _physics_process(delta):
 			RunningSound.play()
 	elif is_on_floor():
 		sprite_2d.animation = "idle"
-		RunningSound.stop()
+		if RunningSound.playing:
+			RunningSound.stop()
 		#Swiches back to normal collider
 		_normalcollison()
 
