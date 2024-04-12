@@ -1,9 +1,15 @@
 extends Area2D
 @onready var sprite = $Sprite2D
+@onready var Powerup = $Powerup
+var pickup: bool = false
+func _physics_process(delta):
+	if pickup == true:
+		Powerup.play()
 
 #When the body is enetered give the player 1 health
 func _on_body_entered(body):
 	if body.is_in_group("player"):
+		pickup = true
 		if Global.currentHealth < Global.maxHealth: #If the current health is less than max give 1 health
 			print("")
 			print("add 1 health")			

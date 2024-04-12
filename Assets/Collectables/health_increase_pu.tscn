@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddvjh63sga1dt"]
+[gd_scene load_steps=5 format=3 uid="uid://ddvjh63sga1dt"]
 
 [ext_resource type="Script" path="res://Assets/Collectables/health_increase_pu.gd" id="1_73gd8"]
 [ext_resource type="Texture2D" uid="uid://dqenx7x2mtypc" path="res://Assets/Nuotraukos/Details/Hearth.png" id="1_m81vu"]
+[ext_resource type="AudioStream" uid="uid://bx8x8bwyjm2c1" path="res://Assets/Sound effects/power-up.mp3" id="3_na2tq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sgggy"]
 size = Vector2(34, 31)
@@ -16,5 +17,8 @@ texture = ExtResource("1_m81vu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_sgggy")
+
+[node name="Powerup" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_na2tq")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

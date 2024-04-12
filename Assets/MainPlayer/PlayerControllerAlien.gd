@@ -10,6 +10,8 @@ var max_jumps = 2 # max jumps that character can make (galima keisti jeigu reiki
 @onready var sprite_2d = $Sprite2D #calling the picture (sprite of a character)
 @onready var RightCheckAbove =$RightCheckAbove #Check if there is an objec above player head on the right on the colider
 @onready var LeftCheckAbove =$LeftCheckAbove #Check if there is an objec above player head on the left on the colider
+@onready var RunningSound =$Running
+@onready var JumpSound = $Jump
 #@onready var maxHealth = Global.maxHealth
 #@onready var currentHealth = Global.currentHealth
 var heartsContainer
@@ -31,14 +33,18 @@ func _physics_process(delta):
 		_crouchingcollison()
 	elif Input.is_action_pressed("jump") and  is_on_floor():
 		sprite_2d.animation = "jumping"
+		RunningSound.stop()
 		#Swiches back to normal collider
 		_normalcollison()
 	elif (Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right")) and (velocity.x>1 || velocity.x<-1) and is_on_floor():
 		sprite_2d.animation = "Running"
 		#Swiches back to normal collider
 		_normalcollison()
+		if not RunningSound.playing:
+			RunningSound.play()
 	elif is_on_floor():
 		sprite_2d.animation = "idle"
+		RunningSound.stop()
 		#Swiches back to normal collider
 		_normalcollison()
 
@@ -61,9 +67,11 @@ func _physics_process(delta):
 	if is_jumping:
 		velocity.y = JUMP_VELOCITY
 		jumps_made += 1
+		JumpSound.play()
 	elif is_double_jumping:
 		jumps_made += 1
 		if jumps_made <= max_jumps:
+			JumpSound.play()
 			velocity.y = DOUBLE_JUMP_VELOCITY
 	elif is_running or is_idling or is_ducking:
 		jumps_made = 0

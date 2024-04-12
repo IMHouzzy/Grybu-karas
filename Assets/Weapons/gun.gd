@@ -8,7 +8,7 @@ var bullet = preload("res://Assets/Weapons/player_bullet.tscn")
 var can_fire = true #Checks if the bullet can be fired
 @onready var bullet_point = $BulletPoint
 @onready var timer = $Timer
-
+@onready var shot = $Shot
 func _ready():
 	#Sets the timer 
 	timer.wait_time = fire_rate 
@@ -21,6 +21,7 @@ func _physics_process(delta):
 			create_bullet_instance()
 			timer.start()
 			can_fire = false
+			shot.play()
 			
 	if global_rotation_degrees >= 90 or global_rotation_degrees <= -90:
 		$Sprite2D.flip_v = true

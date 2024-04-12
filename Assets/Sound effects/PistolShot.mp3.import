@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cve866hooc17y"
+path="res://.godot/imported/PistolShot.mp3-d47e437e61f0665b87af14a43c46730a.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound effects/PistolShot.mp3"
+dest_files=["res://.godot/imported/PistolShot.mp3-d47e437e61f0665b87af14a43c46730a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
