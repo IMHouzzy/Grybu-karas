@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cargfjow3uovt"]
+[gd_scene load_steps=17 format=3 uid="uid://cargfjow3uovt"]
 
 [ext_resource type="Texture2D" uid="uid://bd7nheqficwag" path="res://Assets/level/VibeLevel/back.png" id="1_f5jk6"]
 [ext_resource type="PackedScene" uid="uid://c4gp86aacdhip" path="res://Assets/MainPlayer/Alien.tscn" id="2_h65lq"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ddvjh63sga1dt" path="res://Assets/Collectables/health_increase_pu.tscn" id="9_mreri"]
 [ext_resource type="PackedScene" uid="uid://dmgdh7wyw5uux" path="res://Assets/Collectables/health_capacity_pu.tscn" id="11_sgm7p"]
 [ext_resource type="PackedScene" uid="uid://by4i7x0ce8rsy" path="res://Assets/Collectables/damage_increase_pu.tscn" id="12_873rv"]
+[ext_resource type="PackedScene" uid="uid://cecxupf52mgeg" path="res://Assets/Collectables/invincibility_pu.tscn" id="13_ff54s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e1ffu"]
 texture = ExtResource("2_se4ls")
@@ -875,37 +876,40 @@ position = Vector2(103, 697)
 position = Vector2(100, 665)
 
 [node name="Coin4" parent="." instance=ExtResource("7_t3rwm")]
-position = Vector2(218, 686)
+position = Vector2(66, 689)
 
 [node name="Coin5" parent="." instance=ExtResource("7_t3rwm")]
 position = Vector2(102, 595)
 
 [node name="HealthIncreasePU" parent="." instance=ExtResource("9_mreri")]
-position = Vector2(425, 602)
+position = Vector2(330, 595)
 
 [node name="HealthIncreasePU4" parent="." instance=ExtResource("9_mreri")]
-position = Vector2(367, 591)
+position = Vector2(286, 594)
 
 [node name="HealthIncreasePU2" parent="." instance=ExtResource("9_mreri")]
-position = Vector2(468, 597)
+position = Vector2(284, 558)
 
 [node name="HealthIncreasePU3" parent="." instance=ExtResource("9_mreri")]
-position = Vector2(523, 602)
+position = Vector2(327, 555)
 
 [node name="Pickup_uzi" parent="." instance=ExtResource("9_1p2x7")]
-position = Vector2(409, 735)
+position = Vector2(401, 730)
 
 [node name="HealthCapacityPU" parent="." instance=ExtResource("11_sgm7p")]
-position = Vector2(243, 600)
+position = Vector2(215, 596)
 
 [node name="HealthCapacityPU2" parent="." instance=ExtResource("11_sgm7p")]
-position = Vector2(246, 651)
+position = Vector2(218, 647)
 
 [node name="HealthCapacityPU3" parent="." instance=ExtResource("11_sgm7p")]
-position = Vector2(189, 652)
+position = Vector2(161, 648)
 
 [node name="HealthCapacityPU4" parent="." instance=ExtResource("11_sgm7p")]
-position = Vector2(193, 600)
+position = Vector2(165, 596)
 
 [node name="damage_increase_pu" parent="." instance=ExtResource("12_873rv")]
-position = Vector2(305, 653)
+position = Vector2(377, 637)
+
+[node name="invincibility_pu" parent="." instance=ExtResource("13_ff54s")]
+position = Vector2(268, 676)

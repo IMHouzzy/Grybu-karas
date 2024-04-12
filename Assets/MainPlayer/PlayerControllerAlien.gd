@@ -12,8 +12,6 @@ var max_jumps = 2 # max jumps that character can make (galima keisti jeigu reiki
 @onready var LeftCheckAbove =$LeftCheckAbove #Check if there is an objec above player head on the left on the colider
 @onready var RunningSound =$Running
 @onready var JumpSound = $Jump
-#@onready var maxHealth = Global.maxHealth
-#@onready var currentHealth = Global.currentHealth
 var heartsContainer
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -123,11 +121,14 @@ func updateHealthGUI():
 
 #Handles the damage taking logic
 func healthDamage(takenDamage: int):
-	Global.currentHealth -= 1
-	print(Global.currentHealth)
-	updateHealthGUI()
-	if Global.currentHealth <= 0:
-		print("dead") #Change to quee free when respawn allowed
+	if(Global.invincibility == true):
+		Global.currentHealth -= 0
+	else:
+		Global.currentHealth -= 1
+		print(Global.currentHealth)
+		updateHealthGUI()
+		if Global.currentHealth <= 0:
+			print("dead") #Change to quee free when respawn allowed
 
 #Takes damage when hit by bullet
 func _on_hurt_box_area_entered(area):
