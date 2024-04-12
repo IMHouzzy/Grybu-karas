@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://by4i7x0ce8rsy"]
+
+[ext_resource type="Script" path="res://Assets/Collectables/damage_increase_pu.gd" id="1_h62vp"]
+[ext_resource type="Texture2D" uid="uid://ddstyl8o2mlqp" path="res://Assets/Nuotraukos/Details/damagePU.jpg" id="1_l1y6f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uc31w"]
+size = Vector2(26, 25)
+
+[node name="damage_increase_pu" type="Area2D"]
+script = ExtResource("1_h62vp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-9.53674e-07, -9.53674e-07)
+scale = Vector2(0.0292683, 0.0292683)
+texture = ExtResource("1_l1y6f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_uc31w")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

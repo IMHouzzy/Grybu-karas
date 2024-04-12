@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var ledgeCheckRight: = $LedgeCheckRight
 var loots = preload("res://Assets/Collectables/Coin.tscn")
 #Variables
-var health = 500
+var health = 600
 var speed = 175 #Change this if need some tweaking
 var player_chase = false
 var player = null
