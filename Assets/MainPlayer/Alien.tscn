@@ -12,8 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://tf7oflsrf6j0" path="res://Assets/Nuotraukos/Character3/Stand.png" id="8_tbqvu"]
 [ext_resource type="Texture2D" uid="uid://b4oeim2710qla" path="res://Assets/Nuotraukos/Character3/Stand2.png" id="9_qdr84"]
 [ext_resource type="Texture2D" uid="uid://rq6pqber8lgy" path="res://Assets/Nuotraukos/Character3/Jump.png" id="10_htje3"]
-[ext_resource type="AudioStream" uid="uid://btnfl6y5sjrx5" path="res://Assets/Sound effects/Jump.mp3" id="13_cyape"]
-[ext_resource type="AudioStream" uid="uid://cg65vear8gbmt" path="res://Assets/Sound effects/Running.mp3" id="14_vyor5"]
+[ext_resource type="AudioStream" uid="uid://cg65vear8gbmt" path="res://Assets/Sound effects/Running.mp3" id="13_3j8eo"]
+[ext_resource type="AudioStream" uid="uid://btnfl6y5sjrx5" path="res://Assets/Sound effects/Jump.mp3" id="14_c3gp0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6acrb"]
 animations = [{
@@ -132,12 +132,12 @@ shape = SubResource("CapsuleShape2D_wl2ep")
 position = Vector2(-3, 21)
 shape = SubResource("CircleShape2D_r7iwl")
 
+[node name="Running" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_3j8eo")
+
 [node name="Jump" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("13_cyape")
+stream = ExtResource("14_c3gp0")
 volume_db = -5.0
 pitch_scale = 1.1
-
-[node name="Running" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("14_vyor5")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

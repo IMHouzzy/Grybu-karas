@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cxeep4djkig6m" path="res://Assets/Weapons/Gun pickup/pickup_uzi.tscn" id="9_1p2x7"]
 [ext_resource type="PackedScene" uid="uid://ddvjh63sga1dt" path="res://Assets/Collectables/health_increase_pu.tscn" id="9_mreri"]
 [ext_resource type="PackedScene" uid="uid://dmgdh7wyw5uux" path="res://Assets/Collectables/health_capacity_pu.tscn" id="11_sgm7p"]
-[ext_resource type="PackedScene" path="res://Assets/Collectables/damage_increase_pu.tscn" id="12_873rv"]
+[ext_resource type="PackedScene" uid="uid://by4i7x0ce8rsy" path="res://Assets/Collectables/damage_increase_pu.tscn" id="12_873rv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e1ffu"]
 texture = ExtResource("2_se4ls")
