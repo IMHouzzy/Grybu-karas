@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bu4k6mgydw5kn"]
+[gd_scene load_steps=5 format=3 uid="uid://bu4k6mgydw5kn"]
 
 [ext_resource type="Script" path="res://Assets/HUDs/CoinHUD.gd" id="1_crkb4"]
 [ext_resource type="Texture2D" uid="uid://bmcmh5noh2lm6" path="res://Assets/Nuotraukos/Details/Moneta1.png" id="2_6nalk"]
+[ext_resource type="Texture2D" uid="uid://dcvoxnpdblrjt" path="res://Assets/Nuotraukos/Details/tempinvincible.png" id="3_5rmx5"]
+[ext_resource type="Texture2D" uid="uid://ddstyl8o2mlqp" path="res://Assets/Nuotraukos/Details/damagePU.jpg" id="4_mtxo1"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_crkb4")
@@ -19,3 +21,15 @@ texture_filter = 1
 position = Vector2(43, 41)
 scale = Vector2(1.9401, 1.86476)
 texture = ExtResource("2_6nalk")
+
+[node name="invincibility" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(46, 200)
+scale = Vector2(0.085422, 0.0821048)
+texture = ExtResource("3_5rmx5")
+
+[node name="damage_increase" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(45, 120)
+scale = Vector2(0.0840896, 0.0808241)
+texture = ExtResource("4_mtxo1")

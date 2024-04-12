@@ -17,7 +17,7 @@ texture = ExtResource("1_cg6gd")
 shape = SubResource("RectangleShape2D_l6hir")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 7.0
 one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

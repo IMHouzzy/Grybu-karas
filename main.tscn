@@ -856,16 +856,6 @@ position = Vector2(826, 573)
 [node name="BasicAngryShroom" parent="." instance=ExtResource("4_akbuv")]
 position = Vector2(1163, 689)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_h65lq")]
-position = Vector2(311, 706)
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(-159, -200)
-anchor_mode = 0
-zoom = Vector2(1.415, 1.415)
-limit_left = 0
-limit_top = 0
-
 [node name="Coin" parent="." instance=ExtResource("7_t3rwm")]
 position = Vector2(103, 628)
 
@@ -913,3 +903,13 @@ position = Vector2(377, 637)
 
 [node name="invincibility_pu" parent="." instance=ExtResource("13_ff54s")]
 position = Vector2(268, 676)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_h65lq")]
+position = Vector2(311, 706)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(-159, -200)
+anchor_mode = 0
+zoom = Vector2(1.415, 1.415)
+limit_left = 0
+limit_top = 0
