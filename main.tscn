@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cargfjow3uovt"]
+[gd_scene load_steps=19 format=3 uid="uid://cargfjow3uovt"]
 
 [ext_resource type="Texture2D" uid="uid://bd7nheqficwag" path="res://Assets/level/VibeLevel/back.png" id="1_f5jk6"]
 [ext_resource type="PackedScene" uid="uid://c4gp86aacdhip" path="res://Assets/MainPlayer/Alien.tscn" id="2_h65lq"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://dmgdh7wyw5uux" path="res://Assets/Collectables/health_capacity_pu.tscn" id="11_sgm7p"]
 [ext_resource type="PackedScene" uid="uid://5pob72o6aehs" path="res://Assets/Collectables/damage_increase_pu.tscn" id="12_873rv"]
 [ext_resource type="PackedScene" uid="uid://cecxupf52mgeg" path="res://Assets/Collectables/invincibility_pu.tscn" id="13_ff54s"]
+[ext_resource type="PackedScene" uid="uid://dwhiyo6eybyqu" path="res://Assets/level/next_level_trigger.tscn" id="14_bges8"]
+[ext_resource type="PackedScene" uid="uid://c30s5p11f8ful" path="res://Assets/Weapons/Pistol/pickup_pistol.tscn" id="15_nsuwp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e1ffu"]
 texture = ExtResource("2_se4ls")
@@ -907,9 +909,8 @@ position = Vector2(268, 676)
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_h65lq")]
 position = Vector2(311, 706)
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(-159, -200)
-anchor_mode = 0
-zoom = Vector2(1.415, 1.415)
-limit_left = 0
-limit_top = 0
+[node name="next_level_trigger" parent="." instance=ExtResource("14_bges8")]
+position = Vector2(858, 719)
+
+[node name="Pickup_pistol" parent="." instance=ExtResource("15_nsuwp")]
+position = Vector2(463, 730)

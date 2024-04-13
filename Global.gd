@@ -8,6 +8,12 @@ var increasedCapacity: bool = false
 var increasedDamage: bool = false
 var invincibility: bool = false
 
+#guns
+var has_pistol = false
+var has_uzi = false
+
+
+
 #If coin collected add 1
 func collectedCurrency():
 	currency += 1

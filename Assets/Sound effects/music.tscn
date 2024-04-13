@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbhjk2op02xyn"]
+
+[ext_resource type="AudioStream" uid="uid://c3bbswbtw3gre" path="res://Assets/Sound effects/Boss fight..mp3" id="1_1erty"]
+
+[node name="music" type="AudioStreamPlayer"]
+stream = ExtResource("1_1erty")
+volume_db = -10.0
+autoplay = true

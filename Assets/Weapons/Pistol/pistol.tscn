@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsb0nn0yrrhq0"]
+
+[ext_resource type="Script" path="res://Assets/Weapons/Pistol/pistol.gd" id="1_r3qyc"]
+[ext_resource type="Texture2D" uid="uid://bqoj3eiwsu26f" path="res://Assets/Weapons/Guns/Gun2.png" id="2_3g5bv"]
+[ext_resource type="AudioStream" uid="uid://cve866hooc17y" path="res://Assets/Sound effects/PistolShot.mp3" id="3_rb1k2"]
+
+[node name="Pistol" type="CharacterBody2D"]
+script = ExtResource("1_r3qyc")
+bullet_speed = 1500
+fire_rate = 0.3
+bullet_life_time = 2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(40, 5)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_3g5bv")
+
+[node name="BulletPoint" type="Node2D" parent="."]
+position = Vector2(60, 0)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="Shot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_rb1k2")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

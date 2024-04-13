@@ -16,6 +16,8 @@ func _on_body_entered(body):
 		print("Timer for increased damage started")
 		Global.increasedDamage = true #Increased damage
 		set_visibility_layer_bit(0,false) #Makes it invisible so it works, but cant interact
+		await get_tree().create_timer(1).timeout
+		queue_free()
 
 #Removes all the bonuses after time ended
 func _on_timer_timeout():

@@ -148,4 +148,10 @@ pitch_scale = 1.1
 stream = ExtResource("13_3j8eo")
 pitch_scale = 0.62
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-159, -200)
+anchor_mode = 0
+zoom = Vector2(1.415, 1.415)
+limit_left = -100
+
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

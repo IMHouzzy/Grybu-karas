@@ -7,6 +7,7 @@ var  DOUBLE_JUMP_VELOCITY = -600 #Second jump hight
 
 var jumps_made = 0 #jump counter
 var max_jumps = 2 # max jumps that character can make (galima keisti jeigu reikia)
+var current_weapon = null
 @onready var sprite_2d = $Sprite2D #calling the picture (sprite of a character)
 @onready var RightCheckAbove =$RightCheckAbove #Check if there is an objec above player head on the right on the colider
 @onready var LeftCheckAbove =$LeftCheckAbove #Check if there is an objec above player head on the left on the colider
@@ -122,6 +123,7 @@ func _ready():
 	heartsContainer = $heartsContainer
 	heartsContainer.setMaxHearts(Global.maxHealth)
 	updateHealthGUI()
+	check_weapon()
 
 #Updates the health container to display correct hearts
 func updateHealthGUI():
@@ -157,10 +159,40 @@ func applyHealthCapacityPowerUp():
 		heartsContainer.setMaxHearts(1)
 		updateHealthGUI()
 		Global.increasedCapacity = false
+		
 
 func pick(item):
+	print(Global.has_uzi,Global.has_pistol)
 	match item:
 		"gun":
 			var gun_instance = preload("res://Assets/Weapons/gun.tscn").instantiate()
+			if current_weapon != null:
+				current_weapon.queue_free()
+			current_weapon = gun_instance
 			add_child(gun_instance)
 			gun_instance.global_position = global_position
+			
+		"pistol":
+				var pistol_instance = preload("res://Assets/Weapons/Pistol/pistol.tscn").instantiate()
+				if current_weapon != null:
+					current_weapon.queue_free()
+				current_weapon = pistol_instance
+				add_child(pistol_instance)
+				pistol_instance.global_position = global_position
+
+#
+func check_weapon():
+	if Global.has_uzi:
+		var gun_instance = preload("res://Assets/Weapons/gun.tscn").instantiate()
+		if current_weapon != null:
+			current_weapon.queue_free()
+		current_weapon = gun_instance
+		add_child(gun_instance)
+		gun_instance.global_position = global_position
+	elif Global.has_pistol:
+		var pistol_instance = preload("res://Assets/Weapons/Pistol/pistol.tscn").instantiate()
+		if current_weapon != null:
+			current_weapon.queue_free()
+		current_weapon = pistol_instance
+		add_child(pistol_instance)
+		pistol_instance.global_position = global_position
