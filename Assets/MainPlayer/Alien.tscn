@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c4gp86aacdhip"]
+[gd_scene load_steps=20 format=3 uid="uid://c4gp86aacdhip"]
 
 [ext_resource type="Script" path="res://Assets/MainPlayer/PlayerControllerAlien.gd" id="1_wp7h1"]
 [ext_resource type="Texture2D" uid="uid://bop4vu5rxbsgi" path="res://Assets/Nuotraukos/Character3/Squat3.png" id="2_pev4b"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://tf7oflsrf6j0" path="res://Assets/Nuotraukos/Character3/Stand.png" id="8_tbqvu"]
 [ext_resource type="Texture2D" uid="uid://b4oeim2710qla" path="res://Assets/Nuotraukos/Character3/Stand2.png" id="9_qdr84"]
 [ext_resource type="Texture2D" uid="uid://rq6pqber8lgy" path="res://Assets/Nuotraukos/Character3/Jump.png" id="10_htje3"]
+[ext_resource type="AudioStream" uid="uid://cg65vear8gbmt" path="res://Assets/Sound effects/Running.mp3" id="13_3j8eo"]
+[ext_resource type="AudioStream" uid="uid://btnfl6y5sjrx5" path="res://Assets/Sound effects/Jump.mp3" id="14_c3gp0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6acrb"]
 animations = [{
@@ -93,6 +95,10 @@ collision_layer = 3
 script = ExtResource("1_wp7h1")
 
 [node name="heartsContainer" parent="." instance=ExtResource("2_rad1q")]
+offset_left = -60.0
+offset_top = -190.0
+offset_right = 56.0
+offset_bottom = -150.0
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -129,5 +135,23 @@ shape = SubResource("CapsuleShape2D_wl2ep")
 [node name="HitBoxCrouch" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(-3, 21)
 shape = SubResource("CircleShape2D_r7iwl")
+
+[node name="Running" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_3j8eo")
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_c3gp0")
+volume_db = -5.0
+pitch_scale = 1.1
+
+[node name="Crouching" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_3j8eo")
+pitch_scale = 0.62
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-159, -200)
+anchor_mode = 0
+zoom = Vector2(1.415, 1.415)
+limit_left = -100
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

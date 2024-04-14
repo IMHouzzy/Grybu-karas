@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cg65vear8gbmt"
+path="res://.godot/imported/Running.mp3-b4b139f2a5bd94da41b01325101f8f9a.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound effects/Running.mp3"
+dest_files=["res://.godot/imported/Running.mp3-b4b139f2a5bd94da41b01325101f8f9a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

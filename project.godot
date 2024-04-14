@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*res://Global.gd"
+Transition="*res://Assets/level/transition.tscn"
+Music="*res://Assets/Sound effects/music.tscn"
 
 [input]
 

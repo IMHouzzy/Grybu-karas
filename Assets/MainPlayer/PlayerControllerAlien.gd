@@ -7,11 +7,13 @@ var  DOUBLE_JUMP_VELOCITY = -600 #Second jump hight
 
 var jumps_made = 0 #jump counter
 var max_jumps = 2 # max jumps that character can make (galima keisti jeigu reikia)
+var current_weapon = null
 @onready var sprite_2d = $Sprite2D #calling the picture (sprite of a character)
 @onready var RightCheckAbove =$RightCheckAbove #Check if there is an objec above player head on the right on the colider
 @onready var LeftCheckAbove =$LeftCheckAbove #Check if there is an objec above player head on the left on the colider
-#@onready var maxHealth = Global.maxHealth
-#@onready var currentHealth = Global.currentHealth
+@onready var RunningSound =$Running
+@onready var JumpSound = $Jump
+@onready var CroucingSound = $Crouching
 var heartsContainer
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -25,20 +27,32 @@ func _physics_process(delta):
 	if Input.is_action_pressed("crouch") or RightCheckAbove.is_colliding() or LeftCheckAbove.is_colliding():
 		if not is_zero_approx(velocity.x):
 			sprite_2d.animation = "CrouchWalking"
+			if not CroucingSound.playing:
+				CroucingSound.play()
 		else:
+			CroucingSound.stop()
 			sprite_2d.animation = "Crouching"
 		#Swiches to crouching collider
 		_crouchingcollison()
 	elif Input.is_action_pressed("jump") and  is_on_floor():
 		sprite_2d.animation = "jumping"
+		RunningSound.stop()
+		CroucingSound.stop()
 		#Swiches back to normal collider
 		_normalcollison()
 	elif (Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right")) and (velocity.x>1 || velocity.x<-1) and is_on_floor():
 		sprite_2d.animation = "Running"
+		CroucingSound.stop()
 		#Swiches back to normal collider
 		_normalcollison()
+		if not RunningSound.playing:
+			RunningSound.play()
 	elif is_on_floor():
 		sprite_2d.animation = "idle"
+		if RunningSound.playing:
+			RunningSound.stop()
+		if CroucingSound.playing:
+			CroucingSound.stop()
 		#Swiches back to normal collider
 		_normalcollison()
 
@@ -61,9 +75,11 @@ func _physics_process(delta):
 	if is_jumping:
 		velocity.y = JUMP_VELOCITY
 		jumps_made += 1
+		JumpSound.play()
 	elif is_double_jumping:
 		jumps_made += 1
 		if jumps_made <= max_jumps:
+			JumpSound.play()
 			velocity.y = DOUBLE_JUMP_VELOCITY
 	elif is_running or is_idling or is_ducking:
 		jumps_made = 0
@@ -107,6 +123,7 @@ func _ready():
 	heartsContainer = $heartsContainer
 	heartsContainer.setMaxHearts(Global.maxHealth)
 	updateHealthGUI()
+	check_weapon()
 
 #Updates the health container to display correct hearts
 func updateHealthGUI():
@@ -114,11 +131,14 @@ func updateHealthGUI():
 
 #Handles the damage taking logic
 func healthDamage(takenDamage: int):
-	Global.currentHealth -= 1
-	print(Global.currentHealth)
-	updateHealthGUI()
-	if Global.currentHealth <= 0:
-		print("dead") #Change to quee free when respawn allowed
+	if(Global.invincibility == true): #If power up is picked up the player cannot take damge for 10s 
+		Global.currentHealth -= 0
+	else:
+		Global.currentHealth -= 1
+		print(Global.currentHealth)
+		updateHealthGUI()
+		if Global.currentHealth <= 0:
+			print("dead") #Change to quee free when respawn allowed
 
 #Takes damage when hit by bullet
 func _on_hurt_box_area_entered(area):
@@ -139,10 +159,40 @@ func applyHealthCapacityPowerUp():
 		heartsContainer.setMaxHearts(1)
 		updateHealthGUI()
 		Global.increasedCapacity = false
+		
 
 func pick(item):
+	print(Global.has_uzi,Global.has_pistol)
 	match item:
 		"gun":
 			var gun_instance = preload("res://Assets/Weapons/gun.tscn").instantiate()
+			if current_weapon != null:
+				current_weapon.queue_free()
+			current_weapon = gun_instance
 			add_child(gun_instance)
 			gun_instance.global_position = global_position
+			
+		"pistol":
+				var pistol_instance = preload("res://Assets/Weapons/Pistol/pistol.tscn").instantiate()
+				if current_weapon != null:
+					current_weapon.queue_free()
+				current_weapon = pistol_instance
+				add_child(pistol_instance)
+				pistol_instance.global_position = global_position
+
+#
+func check_weapon():
+	if Global.has_uzi:
+		var gun_instance = preload("res://Assets/Weapons/gun.tscn").instantiate()
+		if current_weapon != null:
+			current_weapon.queue_free()
+		current_weapon = gun_instance
+		add_child(gun_instance)
+		gun_instance.global_position = global_position
+	elif Global.has_pistol:
+		var pistol_instance = preload("res://Assets/Weapons/Pistol/pistol.tscn").instantiate()
+		if current_weapon != null:
+			current_weapon.queue_free()
+		current_weapon = pistol_instance
+		add_child(pistol_instance)
+		pistol_instance.global_position = global_position

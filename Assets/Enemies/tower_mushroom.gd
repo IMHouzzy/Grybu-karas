@@ -5,6 +5,10 @@ extends Node2D
 @export var ammo: PackedScene
 var loots = preload("res://Assets/Collectables/Coin.tscn")
 
+@onready var Shoot = $TowerShoot
+@onready var Hit = $TowerHit
+@onready var Hitbullet = $Hitbullet
+
 var health = 100
 var player 
 var currentEntity = position
@@ -51,12 +55,15 @@ func _shoot():
 	bullet.direction = (rayCast.target_position).normalized()
 	get_tree().current_scene.add_child(bullet)
 	$Sprite2D.animation = "Attack"
-
+	Shoot.play()
 #Take damage function
 func take_damage(damage):
 	health -= damage
+	Hit.play()
+	Hitbullet.play()
 	if health < 0:
 		spawn_loot()
+		set_visibility_layer_bit(0,false) #Makes it invisible so it works, but cant interact
 		queue_free()
 
 #Spawns loot 

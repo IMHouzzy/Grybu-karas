@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d1ilpo0fu0h7j"
+path="res://.godot/imported/Tower mushroom shot.mp3-624ea6138992573577bb1917b1c31d16.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound effects/Tower mushroom shot.mp3"
+dest_files=["res://.godot/imported/Tower mushroom shot.mp3-624ea6138992573577bb1917b1c31d16.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

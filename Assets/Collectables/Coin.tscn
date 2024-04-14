@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://jbjidyom5vnx"]
+[gd_scene load_steps=13 format=3 uid="uid://jbjidyom5vnx"]
 
 [ext_resource type="Script" path="res://Assets/Collectables/Coin.gd" id="1_l8iy7"]
 [ext_resource type="Texture2D" uid="uid://bmcmh5noh2lm6" path="res://Assets/Nuotraukos/Details/Moneta1.png" id="2_cxlbp"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://wvdre1wlmpsg" path="res://Assets/Nuotraukos/Details/MonetaAtsiranda1.png" id="7_sc2mn"]
 [ext_resource type="Texture2D" uid="uid://cdc3kd81wyyb0" path="res://Assets/Nuotraukos/Details/MonetaAtsiranda2.png" id="8_lbb2q"]
 [ext_resource type="Texture2D" uid="uid://btl7ap8xicyb1" path="res://Assets/Nuotraukos/Details/MonetaAtsiranda3.png" id="9_kf2o0"]
+[ext_resource type="AudioStream" uid="uid://dkoj04w1226qs" path="res://Assets/Sound effects/CoinCollection.mp3" id="10_8yqky"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dn2od"]
 animations = [{
@@ -78,5 +79,10 @@ frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ixmi7")
+
+[node name="Collect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_8yqky")
+volume_db = -5.0
+attenuation = 2.82843
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
