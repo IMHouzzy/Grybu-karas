@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjbgb4qvk5f3b"]
+
+[ext_resource type="Script" path="res://Menu/options_menu.gd" id="1_3fkab"]
+[ext_resource type="PackedScene" uid="uid://b8b2ptvyf4o0g" path="res://Menu/settings.tscn" id="2_e514i"]
+
+[sub_resource type="SystemFont" id="SystemFont_uc30l"]
+font_names = PackedStringArray("Ink Free")
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_csj72"]
+font_names = PackedStringArray("Ink Free")
+subpixel_positioning = 0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wflqb"]
+
+[node name="Options_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3fkab")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = -48
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_uc30l")
+theme_override_font_sizes/font_size = 32
+text = "OPTIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_e514i")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Back_Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_csj72")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wflqb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wflqb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wflqb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wflqb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wflqb")
+text = "BACK TO MAIN MENU"
