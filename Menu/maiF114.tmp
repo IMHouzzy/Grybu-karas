@@ -1,0 +1,194 @@
+[gd_scene load_steps=8 format=3 uid="uid://ckkr72cfxxnpc"]
+
+[ext_resource type="Script" path="res://Menu/main_menu.gd" id="1_3q5sq"]
+[ext_resource type="Texture2D" uid="uid://bwmjcfk2wikoh" path="res://Assets/origbig.png" id="1_kld2f"]
+[ext_resource type="PackedScene" uid="uid://bjbgb4qvk5f3b" path="res://Menu/options_menu.tscn" id="3_0nbvy"]
+[ext_resource type="AudioStream" uid="uid://cggqxhh1r8sb" path="res://Assets/Music&Sound/Main_meniu_music.mp3" id="4_yk5vc"]
+
+[sub_resource type="SystemFont" id="SystemFont_7crq8"]
+font_names = PackedStringArray("Ink Free")
+
+[sub_resource type="SystemFont" id="SystemFont_qjr1c"]
+font_names = PackedStringArray("Ink Free")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vhos7"]
+
+[node name="Main_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3q5sq")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kld2f")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Title" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Separator" type="Control" parent="MarginContainer/Title"]
+layout_mode = 2
+
+[node name="War_of_the_shrooms" type="Label" parent="MarginContainer/Title"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.262745, 0.45098, 0.396078, 1)
+theme_override_colors/font_shadow_color = Color(0.329412, 0.529412, 0.423529, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 2
+theme_override_constants/line_spacing = 12
+theme_override_fonts/font = SubResource("SystemFont_7crq8")
+theme_override_font_sizes/font_size = 64
+text = "WAR OF THE SHROOMS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Separator" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Start_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.270588, 0.478431, 0.490196, 1)
+theme_override_colors/font_pressed_color = Color(0.227451, 0.403922, 0.352941, 1)
+theme_override_colors/font_hover_color = Color(0.160784, 0.298039, 0.258824, 1)
+theme_override_colors/font_focus_color = Color(0.160784, 0.298039, 0.258824, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.160784, 0.298039, 0.258824, 1)
+theme_override_colors/font_disabled_color = Color(0.160784, 0.298039, 0.258824, 1)
+theme_override_colors/font_outline_color = Color(0.160784, 0.298039, 0.258824, 1)
+theme_override_colors/icon_normal_color = Color(0.580392, 0.796078, 0.639216, 1)
+theme_override_colors/icon_pressed_color = Color(0.4, 0.639216, 0.568627, 1)
+theme_override_colors/icon_hover_color = Color(0.509804, 0.737255, 0.611765, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.4, 0.639216, 0.568627, 1)
+theme_override_fonts/font = SubResource("SystemFont_qjr1c")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vhos7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vhos7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vhos7")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vhos7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vhos7")
+text = "START"
+
+[node name="Separator1" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Options_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.270588, 0.478431, 0.490196, 1)
+theme_override_colors/font_pressed_color = Color(0.227451, 0.403922, 0.352941, 1)
+theme_override_colors/font_hover_color = Color(0.160784, 0.298039, 0.258824, 1)
+theme_override_colors/font_focus_color = Color(0.160784, 0.298039, 0.258824, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.160784, 0.298039, 0.258824, 1)
+theme_override_colors/font_disabled_color = Color(0.160784, 0.298039, 0.258824, 1)
+theme_override_colors/font_outline_color = Color(0.160784, 0.298039, 0.258824, 1)
+theme_override_colors/icon_normal_color = Color(0.580392, 0.796078, 0.639216, 1)
+theme_override_colors/icon_pressed_color = Color(0.4, 0.639216, 0.568627, 1)
+theme_override_colors/icon_hover_color = Color(0.509804, 0.737255, 0.611765, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.4, 0.639216, 0.568627, 1)
+theme_override_fonts/font = SubResource("SystemFont_qjr1c")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vhos7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vhos7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vhos7")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vhos7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vhos7")
+text = "OPTIONS"
+
+[node name="Separator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Load_Save_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.270588, 0.478431, 0.490196, 1)
+theme_override_colors/font_pressed_color = Color(0.227451, 0.403922, 0.352941, 1)
+theme_override_colors/font_hover_color = Color(0.160784, 0.298039, 0.258824, 1)
+theme_override_colors/font_focus_color = Color(0.160784, 0.298039, 0.258824, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.160784, 0.298039, 0.258824, 1)
+theme_override_colors/font_disabled_color = Color(0.160784, 0.298039, 0.258824, 1)
+theme_override_colors/font_outline_color = Color(0.160784, 0.298039, 0.258824, 1)
+theme_override_colors/icon_normal_color = Color(0.580392, 0.796078, 0.639216, 1)
+theme_override_colors/icon_pressed_color = Color(0.4, 0.639216, 0.568627, 1)
+theme_override_colors/icon_hover_color = Color(0.509804, 0.737255, 0.611765, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.4, 0.639216, 0.568627, 1)
+theme_override_fonts/font = SubResource("SystemFont_qjr1c")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vhos7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vhos7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vhos7")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vhos7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vhos7")
+text = "LOAD SAVE"
+
+[node name="Separator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+
+[node name="Quit_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.270588, 0.478431, 0.490196, 1)
+theme_override_colors/font_pressed_color = Color(0.227451, 0.403922, 0.352941, 1)
+theme_override_colors/font_hover_color = Color(0.160784, 0.298039, 0.258824, 1)
+theme_override_colors/font_focus_color = Color(0.160784, 0.298039, 0.258824, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.160784, 0.298039, 0.258824, 1)
+theme_override_colors/font_disabled_color = Color(0.160784, 0.298039, 0.258824, 1)
+theme_override_colors/font_outline_color = Color(0.160784, 0.298039, 0.258824, 1)
+theme_override_colors/icon_normal_color = Color(0.580392, 0.796078, 0.639216, 1)
+theme_override_colors/icon_pressed_color = Color(0.4, 0.639216, 0.568627, 1)
+theme_override_colors/icon_hover_color = Color(0.509804, 0.737255, 0.611765, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.4, 0.639216, 0.568627, 1)
+theme_override_fonts/font = SubResource("SystemFont_qjr1c")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vhos7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vhos7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vhos7")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vhos7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vhos7")
+text = "QUIT"
+
+[node name="Options_Menu" parent="." instance=ExtResource("3_0nbvy")]
+visible = false
+layout_mode = 1
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_yk5vc")
+volume_db = 10.0
+autoplay = true
+bus = &"Music"
