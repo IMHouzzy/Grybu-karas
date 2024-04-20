@@ -7,7 +7,7 @@
 [node name="Pistol" type="CharacterBody2D"]
 script = ExtResource("1_r3qyc")
 bullet_speed = 1500
-fire_rate = 0.3
+fire_rate = 0.5
 bullet_life_time = 2.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
