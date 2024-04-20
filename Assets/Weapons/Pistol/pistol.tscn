@@ -24,5 +24,6 @@ wait_time = 0.5
 
 [node name="Shot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_rb1k2")
+bus = &"Sfx"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

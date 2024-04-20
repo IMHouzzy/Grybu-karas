@@ -138,15 +138,18 @@ shape = SubResource("CircleShape2D_r7iwl")
 
 [node name="Running" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_3j8eo")
+bus = &"Sfx"
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_c3gp0")
 volume_db = -5.0
 pitch_scale = 1.1
+bus = &"Sfx"
 
 [node name="Crouching" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_3j8eo")
 pitch_scale = 0.62
+bus = &"Sfx"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-159, -200)

@@ -54,5 +54,6 @@ shape = SubResource("RectangleShape2D_mleet")
 [node name="Powerup" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_xnyfa")
 volume_db = -5.0
+bus = &"Sfx"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

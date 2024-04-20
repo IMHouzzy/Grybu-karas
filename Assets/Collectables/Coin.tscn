@@ -84,5 +84,6 @@ shape = SubResource("CircleShape2D_ixmi7")
 stream = ExtResource("10_8yqky")
 volume_db = -5.0
 attenuation = 2.82843
+bus = &"Sfx"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

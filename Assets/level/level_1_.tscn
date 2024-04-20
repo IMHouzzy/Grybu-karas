@@ -1,26 +1,26 @@
 [gd_scene load_steps=22 format=3 uid="uid://bhf1p366lxdsc"]
 
-[ext_resource type="PackedScene" uid="uid://c4gp86aacdhip" path="res://Assets/MainPlayer/Alien.tscn" id="1_2nuy0"]
-[ext_resource type="Texture2D" uid="uid://c6y2pfok5efun" path="res://Assets/level/VibeLevel/tileset.png" id="1_7w6k7"]
-[ext_resource type="Texture2D" uid="uid://bx40ssxij3rms" path="res://Assets/level/VibeLevel/props.png" id="2_xsvy7"]
-[ext_resource type="Texture2D" uid="uid://b5cq1ka4a7xom" path="res://Assets/level/tutorial1/1.png" id="3_gulch"]
-[ext_resource type="Texture2D" uid="uid://dawkjqhl2bjit" path="res://Assets/level/tutorial1/2.png" id="4_sj4vc"]
-[ext_resource type="Texture2D" uid="uid://c361pamrm0kch" path="res://Assets/level/tutorial1/3.png" id="5_0c11t"]
-[ext_resource type="Texture2D" uid="uid://dsr12g5yx3q2s" path="res://Assets/level/tutorial1/10.png" id="6_hcshi"]
-[ext_resource type="Texture2D" uid="uid://llj5k2mwtm02" path="res://Assets/level/tutorial1/5.png" id="7_1n5jn"]
-[ext_resource type="Texture2D" uid="uid://dftk1ctk23v4e" path="res://Assets/level/tutorial1/8.png" id="8_56ng8"]
-[ext_resource type="PackedScene" uid="uid://dwhiyo6eybyqu" path="res://Assets/level/next_level_trigger.tscn" id="10_7tlxa"]
-[ext_resource type="PackedScene" uid="uid://bu4k6mgydw5kn" path="res://Assets/HUDs/CoinHUD.tscn" id="10_ihhbo"]
-[ext_resource type="PackedScene" uid="uid://cxeep4djkig6m" path="res://Assets/Weapons/Gun pickup/pickup_uzi.tscn" id="12_kl3sl"]
-[ext_resource type="PackedScene" uid="uid://jbjidyom5vnx" path="res://Assets/Collectables/Coin.tscn" id="13_f3ua7"]
-[ext_resource type="PackedScene" uid="uid://ddvjh63sga1dt" path="res://Assets/Collectables/health_increase_pu.tscn" id="14_1gchn"]
-[ext_resource type="PackedScene" uid="uid://dmgdh7wyw5uux" path="res://Assets/Collectables/health_capacity_pu.tscn" id="15_saopn"]
-[ext_resource type="PackedScene" uid="uid://5pob72o6aehs" path="res://Assets/Collectables/damage_increase_pu.tscn" id="16_jc3ip"]
-[ext_resource type="PackedScene" uid="uid://cecxupf52mgeg" path="res://Assets/Collectables/invincibility_pu.tscn" id="17_577nq"]
-[ext_resource type="PackedScene" uid="uid://c30s5p11f8ful" path="res://Assets/Weapons/Pistol/pickup_pistol.tscn" id="18_ec2s5"]
+[ext_resource type="PackedScene" uid="uid://bu4k6mgydw5kn" path="res://Assets/HUDs/CoinHUD.tscn" id="1_t5aml"]
+[ext_resource type="Texture2D" uid="uid://c6y2pfok5efun" path="res://Assets/level/VibeLevel/tileset.png" id="2_0f3ym"]
+[ext_resource type="Texture2D" uid="uid://bx40ssxij3rms" path="res://Assets/level/VibeLevel/props.png" id="3_tqeq0"]
+[ext_resource type="Texture2D" uid="uid://b5cq1ka4a7xom" path="res://Assets/level/tutorial1/1.png" id="4_itvtb"]
+[ext_resource type="Texture2D" uid="uid://dawkjqhl2bjit" path="res://Assets/level/tutorial1/2.png" id="5_xqb5s"]
+[ext_resource type="Texture2D" uid="uid://c361pamrm0kch" path="res://Assets/level/tutorial1/3.png" id="6_yphkx"]
+[ext_resource type="Texture2D" uid="uid://dsr12g5yx3q2s" path="res://Assets/level/tutorial1/10.png" id="7_hkrv6"]
+[ext_resource type="Texture2D" uid="uid://llj5k2mwtm02" path="res://Assets/level/tutorial1/5.png" id="8_xc0o1"]
+[ext_resource type="Texture2D" uid="uid://dftk1ctk23v4e" path="res://Assets/level/tutorial1/8.png" id="9_lcqsj"]
+[ext_resource type="PackedScene" uid="uid://cxeep4djkig6m" path="res://Assets/Weapons/Gun pickup/pickup_uzi.tscn" id="10_xbbfp"]
+[ext_resource type="PackedScene" uid="uid://jbjidyom5vnx" path="res://Assets/Collectables/Coin.tscn" id="11_bwiin"]
+[ext_resource type="PackedScene" uid="uid://ddvjh63sga1dt" path="res://Assets/Collectables/health_increase_pu.tscn" id="12_66ksq"]
+[ext_resource type="PackedScene" uid="uid://dmgdh7wyw5uux" path="res://Assets/Collectables/health_capacity_pu.tscn" id="13_if4o7"]
+[ext_resource type="PackedScene" uid="uid://5pob72o6aehs" path="res://Assets/Collectables/damage_increase_pu.tscn" id="14_slvkg"]
+[ext_resource type="PackedScene" uid="uid://cecxupf52mgeg" path="res://Assets/Collectables/invincibility_pu.tscn" id="15_yp6t3"]
+[ext_resource type="PackedScene" uid="uid://c4gp86aacdhip" path="res://Assets/MainPlayer/Alien.tscn" id="16_xn3rh"]
+[ext_resource type="PackedScene" uid="uid://dwhiyo6eybyqu" path="res://Assets/level/next_level_trigger.tscn" id="17_7ne2r"]
+[ext_resource type="PackedScene" uid="uid://c30s5p11f8ful" path="res://Assets/Weapons/Pistol/pickup_pistol.tscn" id="18_ywa2v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e1ffu"]
-texture = ExtResource("1_7w6k7")
+texture = ExtResource("2_0f3ym")
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
@@ -544,7 +544,7 @@ texture = ExtResource("1_7w6k7")
 22:12/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6an3v"]
-texture = ExtResource("2_xsvy7")
+texture = ExtResource("3_tqeq0")
 21:1/0 = 0
 21:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 21:1/0/physics_layer_0/angular_velocity = 0.0
@@ -928,7 +928,7 @@ sources/1 = SubResource("TileSetAtlasSource_6an3v")
 
 [node name="Level1" type="Node2D"]
 
-[node name="HUD" parent="." instance=ExtResource("10_ihhbo")]
+[node name="HUD" parent="." instance=ExtResource("1_t5aml")]
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -950,7 +950,7 @@ metadata/_edit_lock_ = true
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(790, 430)
 scale = Vector2(3, 2.996)
-texture = ExtResource("3_gulch")
+texture = ExtResource("4_itvtb")
 metadata/_edit_lock_ = true
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -961,7 +961,7 @@ metadata/_edit_lock_ = true
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2(460, 350)
 scale = Vector2(1.3, 1.3)
-texture = ExtResource("4_sj4vc")
+texture = ExtResource("5_xqb5s")
 metadata/_edit_lock_ = true
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -972,7 +972,7 @@ metadata/_edit_lock_ = true
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 position = Vector2(790, 430)
 scale = Vector2(3, 3)
-texture = ExtResource("5_0c11t")
+texture = ExtResource("6_yphkx")
 metadata/_edit_lock_ = true
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -983,7 +983,7 @@ metadata/_edit_lock_ = true
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
 position = Vector2(790, 430)
 scale = Vector2(3, 3)
-texture = ExtResource("6_hcshi")
+texture = ExtResource("7_hkrv6")
 metadata/_edit_lock_ = true
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -994,7 +994,7 @@ metadata/_edit_lock_ = true
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
 position = Vector2(790, 430)
 scale = Vector2(3, 3)
-texture = ExtResource("7_1n5jn")
+texture = ExtResource("8_xc0o1")
 metadata/_edit_lock_ = true
 
 [node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -1005,32 +1005,32 @@ metadata/_edit_lock_ = true
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
 position = Vector2(790, 430)
 scale = Vector2(3, 3)
-texture = ExtResource("8_56ng8")
+texture = ExtResource("9_lcqsj")
 metadata/_edit_lock_ = true
 
-[node name="Pickup_uzi" parent="." instance=ExtResource("12_kl3sl")]
-position = Vector2(98, 472)
+[node name="Pickup_uzi" parent="." instance=ExtResource("10_xbbfp")]
+position = Vector2(549, 281)
 
-[node name="Coin" parent="." instance=ExtResource("13_f3ua7")]
+[node name="Coin" parent="." instance=ExtResource("11_bwiin")]
 position = Vector2(236, 446)
 
-[node name="HealthIncreasePU" parent="." instance=ExtResource("14_1gchn")]
-position = Vector2(240, 341)
+[node name="HealthIncreasePU" parent="." instance=ExtResource("12_66ksq")]
+position = Vector2(955, 480)
 
-[node name="HealthCapacityPU" parent="." instance=ExtResource("15_saopn")]
-position = Vector2(201, 340)
+[node name="HealthCapacityPU" parent="." instance=ExtResource("13_if4o7")]
+position = Vector2(646, 485)
 
-[node name="damage_increase_pu" parent="." instance=ExtResource("16_jc3ip")]
-position = Vector2(253, 379)
+[node name="damage_increase_pu" parent="." instance=ExtResource("14_slvkg")]
+position = Vector2(1693, 388)
 
-[node name="invincibility_pu" parent="." instance=ExtResource("17_577nq")]
-position = Vector2(222, 409)
+[node name="invincibility_pu" parent="." instance=ExtResource("15_yp6t3")]
+position = Vector2(1140, 185)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_2nuy0")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("16_xn3rh")]
 position = Vector2(148, 465)
 
-[node name="next_level_trigger" parent="." instance=ExtResource("10_7tlxa")]
-position = Vector2(20, 458)
+[node name="next_level_trigger" parent="." instance=ExtResource("17_7ne2r")]
+position = Vector2(1962, 479)
 
-[node name="Pickup_pistol" parent="." instance=ExtResource("18_ec2s5")]
-position = Vector2(236, 449)
+[node name="Pickup_pistol" parent="." instance=ExtResource("18_ywa2v")]
+position = Vector2(1208, 203)

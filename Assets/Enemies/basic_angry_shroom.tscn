@@ -65,10 +65,12 @@ target_position = Vector2(0, 10)
 [node name="Hitbullet" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_8duna")
 volume_db = -5.0
+bus = &"Sfx"
 
 [node name="Hit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_ub3np")
 volume_db = -5.0
+bus = &"Sfx"
 
 [connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
