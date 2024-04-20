@@ -58,6 +58,5 @@ layout_mode = 2
 bus_name = "Music"
 
 [node name="Audio_Slider_Settings3" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_d1wp2")]
-visible = false
 layout_mode = 2
 bus_name = "Sfx"
