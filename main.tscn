@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cargfjow3uovt"]
+[gd_scene load_steps=21 format=3 uid="uid://cargfjow3uovt"]
 
 [ext_resource type="Texture2D" uid="uid://bd7nheqficwag" path="res://Assets/level/VibeLevel/back.png" id="1_f5jk6"]
 [ext_resource type="PackedScene" uid="uid://c4gp86aacdhip" path="res://Assets/MainPlayer/Alien.tscn" id="2_h65lq"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dwhiyo6eybyqu" path="res://Assets/level/next_level_trigger.tscn" id="14_bges8"]
 [ext_resource type="PackedScene" uid="uid://c30s5p11f8ful" path="res://Assets/Weapons/Pistol/pickup_pistol.tscn" id="15_nsuwp"]
 [ext_resource type="PackedScene" uid="uid://bforj53ek1esn" path="res://Assets/Enemies/lady_mushroom.tscn" id="16_o6c4i"]
+[ext_resource type="PackedScene" uid="uid://br1y52xgq4fuq" path="res://Assets/Enemies/purple_mushrrom.tscn" id="17_gc85m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e1ffu"]
 texture = ExtResource("2_se4ls")
@@ -917,4 +918,7 @@ position = Vector2(557, 563)
 position = Vector2(463, 730)
 
 [node name="LadyMushroom" parent="." instance=ExtResource("16_o6c4i")]
-position = Vector2(826, 713)
+position = Vector2(1557, 679)
+
+[node name="PurpleMushrrom" parent="." instance=ExtResource("17_gc85m")]
+position = Vector2(669, 736)
