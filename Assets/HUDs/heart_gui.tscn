@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dqenx7x2mtypc" path="res://Assets/Nuotraukos/Details/Hearth.png" id="1_1wgdt"]
 [ext_resource type="Script" path="res://Assets/HUDs/heart_gui.gd" id="1_axxqm"]
-[ext_resource type="Texture2D" uid="uid://bkacb8jvxtfp2" path="res://Assets/Nuotraukos/Details/Hearth14.png" id="3_si54u"]
+[ext_resource type="Texture2D" uid="uid://kbcpld8mp1pd" path="res://Assets/Nuotraukos/Details/EmptyHeartth.png" id="3_w6p8e"]
 
 [node name="HeartGUI" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
@@ -22,4 +22,4 @@ centered = false
 texture_filter = 1
 position = Vector2(22, 22)
 scale = Vector2(1.1875, 1.1875)
-texture = ExtResource("3_si54u")
+texture = ExtResource("3_w6p8e")
