@@ -78,7 +78,7 @@ func _shoot():
 		bullet.position = $BulletPoint.global_position #Fix this
 		bullet.direction = (rayCast.target_position).normalized()
 		get_tree().current_scene.add_child(bullet)
-		$Sprite2D.animation = "Attack"
+		#$Sprite2D.animation = "Attack"
 		#Shoot.play()
 
 

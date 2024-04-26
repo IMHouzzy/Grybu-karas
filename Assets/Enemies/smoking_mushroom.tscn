@@ -1,0 +1,85 @@
+[gd_scene load_steps=11 format=3 uid="uid://bca8d81ssbwl3"]
+
+[ext_resource type="Script" path="res://Assets/Enemies/lady_mushroom.gd" id="1_olrn8"]
+[ext_resource type="PackedScene" uid="uid://mw0lwacqfudp" path="res://Assets/Enemies/bullet_smoker.tscn" id="2_2nog1"]
+[ext_resource type="Texture2D" uid="uid://b7o02qhje3yjd" path="res://Assets/Nuotraukos/Smoking Mushroom/Stand.png" id="3_g2y7m"]
+[ext_resource type="Texture2D" uid="uid://dybn0y64w3n7k" path="res://Assets/Nuotraukos/Smoking Mushroom/Walk1.png" id="4_7yd6j"]
+[ext_resource type="Texture2D" uid="uid://btl6xvsf8rnsg" path="res://Assets/Nuotraukos/Smoking Mushroom/Walk2.png" id="5_63alk"]
+[ext_resource type="Texture2D" uid="uid://b6nilu86bji5p" path="res://Assets/Nuotraukos/Smoking Mushroom/Walk3.png" id="6_ncpfx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_16gjs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_g2y7m")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_7yd6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_63alk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ncpfx")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mokb"]
+size = Vector2(35, 59)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iagxw"]
+radius = 254.002
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rl6yy"]
+radius = 33.0151
+
+[node name="SmokingMushroom" type="CharacterBody2D" groups=["Enemy"]]
+script = ExtResource("1_olrn8")
+ammo = ExtResource("2_2nog1")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-0.250004, 0.250004)
+scale = Vector2(1.78472, 1.78472)
+sprite_frames = SubResource("SpriteFrames_16gjs")
+animation = &"Walking"
+autoplay = "Idle"
+frame = 1
+frame_progress = 0.802898
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 2.5)
+shape = SubResource("RectangleShape2D_7mokb")
+
+[node name="Detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_iagxw")
+
+[node name="StopDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StopDetection"]
+shape = SubResource("CircleShape2D_rl6yy")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(250, 0)
+
+[node name="ReloadTimer" type="Timer" parent="."]
+
+[node name="BulletPoint" type="Node2D" parent="."]
+position = Vector2(22, 0)
+
+[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
+[connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
+[connection signal="body_entered" from="StopDetection" to="." method="_on_stop_detection_body_entered"]
+[connection signal="body_exited" from="StopDetection" to="." method="_on_stop_detection_body_exited"]
+[connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]

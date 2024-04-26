@@ -6,8 +6,8 @@ extends CharacterBody2D
 @onready var timer = $ReloadTimer
 
 #Variables
-var health = 800
-var speed = 280 #Change this if need some tweaking
+var health = 400
+var speed = 150 #Change this if need some tweaking
 var player_chase = false
 var player = null
 var gravity = 700
@@ -77,7 +77,7 @@ func _shoot():
 	bullet.position = $BulletPoint.global_position #Fix this
 	bullet.direction = (rayCast.target_position).normalized()
 	get_tree().current_scene.add_child(bullet)
-	$Sprite2D.animation = "Attack"
+	#$Sprite2D.animation = "Attack"
 	#Shoot.play()
 
 #When player walks into the detection zone

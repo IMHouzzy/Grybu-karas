@@ -1,9 +1,14 @@
 extends CharacterBody2D
 
+#Enemy debufs
+var speedDebuf: bool = false
+var debufSpeed = 150
+
+
 var SPEED = 300.0 #Character speed
 var JUMP_VELOCITY = -700 #Jump hight
 var  DOUBLE_JUMP_VELOCITY = -600 #Second jump hight
-
+@onready var timer = $DebuffTimer
 
 var jumps_made = 0 #jump counter
 var max_jumps = 2 # max jumps that character can make (galima keisti jeigu reikia)
@@ -104,16 +109,27 @@ func _normalcollison():
 	$HurtBox/HitBoxCrouch.disabled = true
 	$NormalColision.disabled = false
 	$CrouchingColision.disabled = true
-	SPEED = 300.0
+	
+	#Handles speed
+	if speedDebuf == false:
+		SPEED = 300.0
+	
+	else:
+		SPEED = 150
+	
 	JUMP_VELOCITY = -700
 	DOUBLE_JUMP_VELOCITY = -600
+	
 	#Setting for crouching collision
 func _crouchingcollison():
 	$HurtBox/HitBoxNormal.disabled = true
 	$HurtBox/HitBoxCrouch.disabled = false
 	$NormalColision.disabled = true
 	$CrouchingColision.disabled = false
-	SPEED = 150
+	if speedDebuf == false:
+		SPEED = 150
+	else:
+		SPEED = 75
 	JUMP_VELOCITY = -500
 	DOUBLE_JUMP_VELOCITY = -400
 
@@ -146,6 +162,13 @@ func _on_hurt_box_area_entered(area):
 	if area.is_in_group("EnemyBullet"):
 		takenDamage = 1
 		healthDamage(takenDamage)
+	#When hit with the smokers bullet slow down for set time
+	if area.is_in_group("SmokerBullet"):
+		timer.start() #Start debuf timer
+		print("Slowed down")
+		takenDamage = 1
+		healthDamage(takenDamage)
+		speedDebuf = true
 
 #Checks global variable if health power-up was picked up
 func applyHealthIncreasePowerUp():
@@ -196,3 +219,8 @@ func check_weapon():
 		current_weapon = pistol_instance
 		add_child(pistol_instance)
 		pistol_instance.global_position = global_position
+
+#When time runs out set the speed back to its original value
+func _on_debuff_timer_timeout():
+	speedDebuf = false
+	print("Debuf ended")
