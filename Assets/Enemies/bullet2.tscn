@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bah1r54jnce6a"]
+
+[ext_resource type="Script" path="res://Assets/Enemies/bullet2.gd" id="1_2p73a"]
+[ext_resource type="Texture2D" uid="uid://bcgbl4kau4krb" path="res://Assets/Nuotraukos/Details/Bullet4.png" id="1_rs7q6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rpb2i"]
+radius = 13.0
+
+[node name="Bullet2" type="Area2D" groups=["EnemyBullet"]]
+script = ExtResource("1_2p73a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(4.76837e-07, 4.76837e-07)
+scale = Vector2(0.694444, 0.694444)
+texture = ExtResource("1_rs7q6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rpb2i")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]
