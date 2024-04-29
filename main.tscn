@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cargfjow3uovt"]
+[gd_scene load_steps=25 format=3 uid="uid://cargfjow3uovt"]
 
 [ext_resource type="Texture2D" uid="uid://bd7nheqficwag" path="res://Assets/level/VibeLevel/back.png" id="1_f5jk6"]
 [ext_resource type="PackedScene" uid="uid://c4gp86aacdhip" path="res://Assets/MainPlayer/Alien.tscn" id="2_h65lq"]
@@ -18,6 +18,9 @@
 [ext_resource type="PackedScene" uid="uid://bforj53ek1esn" path="res://Assets/Enemies/lady_mushroom.tscn" id="16_o6c4i"]
 [ext_resource type="PackedScene" uid="uid://br1y52xgq4fuq" path="res://Assets/Enemies/purple_mushrrom.tscn" id="17_gc85m"]
 [ext_resource type="PackedScene" uid="uid://bca8d81ssbwl3" path="res://Assets/Enemies/smoking_mushroom.tscn" id="18_33vbw"]
+[ext_resource type="PackedScene" uid="uid://sb5gtsjdo6mu" path="res://Assets/Weapons/Sword/pickup_sword.tscn" id="19_2rqi7"]
+[ext_resource type="PackedScene" uid="uid://b6ij520mtdad4" path="res://Assets/Weapons/Bat/pickup_bat.tscn" id="20_gft40"]
+[ext_resource type="PackedScene" uid="uid://b702f8iwg4bet" path="res://Assets/Weapons/Axe/pickup_axe.tscn" id="21_7oyl5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e1ffu"]
 texture = ExtResource("2_se4ls")
@@ -889,7 +892,7 @@ position = Vector2(284, 558)
 position = Vector2(327, 555)
 
 [node name="Pickup_uzi" parent="." instance=ExtResource("9_1p2x7")]
-position = Vector2(401, 730)
+position = Vector2(455, 636)
 
 [node name="HealthCapacityPU" parent="." instance=ExtResource("11_sgm7p")]
 position = Vector2(215, 596)
@@ -913,10 +916,11 @@ position = Vector2(426, 579)
 position = Vector2(311, 706)
 
 [node name="next_level_trigger" parent="." instance=ExtResource("14_bges8")]
-position = Vector2(557, 563)
+position = Vector2(83, 528)
 
 [node name="Pickup_pistol" parent="." instance=ExtResource("15_nsuwp")]
-position = Vector2(463, 730)
+visible = false
+position = Vector2(519, 600)
 
 [node name="LadyMushroom" parent="." instance=ExtResource("16_o6c4i")]
 position = Vector2(1557, 679)
@@ -925,4 +929,13 @@ position = Vector2(1557, 679)
 position = Vector2(2082, 412)
 
 [node name="SmokingMushroom" parent="." instance=ExtResource("18_33vbw")]
-position = Vector2(693, 728)
+position = Vector2(998, 716)
+
+[node name="Pickup_sword" parent="." instance=ExtResource("19_2rqi7")]
+position = Vector2(135, 697)
+
+[node name="Pickup_bat" parent="." instance=ExtResource("20_gft40")]
+position = Vector2(626, 727)
+
+[node name="Pickup_axe" parent="." instance=ExtResource("21_7oyl5")]
+position = Vector2(352, 660)

@@ -1,10 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c30s5p11f8ful"]
+[gd_scene load_steps=7 format=3 uid="uid://b6ij520mtdad4"]
 
-[ext_resource type="Script" path="res://Assets/Weapons/Pistol/pickup_pistol.gd" id="1_dpdn0"]
-[ext_resource type="Texture2D" uid="uid://bqoj3eiwsu26f" path="res://Assets/Weapons/Guns/Gun2.png" id="2_lgib2"]
+[ext_resource type="Script" path="res://Assets/Weapons/Bat/Pickup_bat.gd" id="1_gwe6u"]
+[ext_resource type="Texture2D" uid="uid://bbrunveljpreu" path="res://Assets/Weapons/Guns/Bat.png" id="2_aqwl8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fsuty"]
-size = Vector2(26, 26)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_svq4f"]
+size = Vector2(24, 45)
 
 [sub_resource type="Animation" id="Animation_tyo3u"]
 length = 0.001
@@ -44,19 +44,18 @@ _data = {
 "bob": SubResource("Animation_6ca8a")
 }
 
-[node name="pickup_pistol" type="Area2D"]
-script = ExtResource("1_dpdn0")
+[node name="Pickup_bat" type="Area2D"]
+script = ExtResource("1_gwe6u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 5)
-shape = SubResource("RectangleShape2D_fsuty")
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_svq4f")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, 5)
 rotation = -0.404916
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("2_lgib2")
+texture = ExtResource("2_aqwl8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
