@@ -185,7 +185,7 @@ func applyHealthCapacityPowerUp():
 		
 
 func pick(item):
-	print(Global.has_uzi,Global.has_pistol)
+	#print(Global.has_uzi,Global.has_pistol)
 	match item:
 		"gun":
 			var gun_instance = preload("res://Assets/Weapons/gun.tscn").instantiate()
@@ -196,29 +196,69 @@ func pick(item):
 			gun_instance.global_position = global_position
 			
 		"pistol":
-				var pistol_instance = preload("res://Assets/Weapons/Pistol/pistol.tscn").instantiate()
-				if current_weapon != null:
-					current_weapon.queue_free()
-				current_weapon = pistol_instance
-				add_child(pistol_instance)
-				pistol_instance.global_position = global_position
+			var pistol_instance = preload("res://Assets/Weapons/Pistol/pistol.tscn").instantiate()
+			if current_weapon != null:
+				current_weapon.queue_free()
+			current_weapon = pistol_instance
+			add_child(pistol_instance)
+			pistol_instance.global_position = global_position
+			
+		"sword":
+			var sword_instance = preload("res://Assets/Weapons/Sword/sword.tscn").instantiate()
+			if current_weapon != null:
+				current_weapon.queue_free()
+			current_weapon = sword_instance
+			add_child(sword_instance)
+			sword_instance.global_position = global_position
+			
+		"bat":
+			var bat_instance = preload("res://Assets/Weapons/Bat/bat.tscn").instantiate()
+			if current_weapon != null:
+				current_weapon.queue_free()
+			current_weapon = bat_instance
+			add_child(bat_instance)
+			bat_instance.global_position = global_position
+			
+		"axe":
+			var axe_instance = preload("res://Assets/Weapons/Axe/axe.tscn").instantiate()
+			if current_weapon != null:
+				current_weapon.queue_free()
+			current_weapon = axe_instance
+			add_child(axe_instance)
+			call_deferred("set_weapon_global_position", axe_instance, global_position)
+
+func set_weapon_global_position(weapon_instance, position):
+	weapon_instance.global_position = position
+
+
 
 #
 func check_weapon():
 	if Global.has_uzi:
 		var gun_instance = preload("res://Assets/Weapons/gun.tscn").instantiate()
-		if current_weapon != null:
-			current_weapon.queue_free()
 		current_weapon = gun_instance
 		add_child(gun_instance)
 		gun_instance.global_position = global_position
 	elif Global.has_pistol:
 		var pistol_instance = preload("res://Assets/Weapons/Pistol/pistol.tscn").instantiate()
-		if current_weapon != null:
-			current_weapon.queue_free()
 		current_weapon = pistol_instance
 		add_child(pistol_instance)
 		pistol_instance.global_position = global_position
+	elif Global.has_sword:
+		var sword_instance = preload("res://Assets/Weapons/Sword/sword.tscn").instantiate()
+		current_weapon = sword_instance
+		add_child(sword_instance)
+		sword_instance.global_position = global_position
+	elif Global.has_bat:
+		var bat_instance = preload("res://Assets/Weapons/Bat/bat.tscn").instantiate()
+		current_weapon = bat_instance
+		add_child(bat_instance)
+		bat_instance.global_position = global_position
+	elif Global.has_axe:
+		var axe_instance = preload("res://Assets/Weapons/Axe/axe.tscn").instantiate()
+		current_weapon = axe_instance
+		add_child(axe_instance)
+		axe_instance.global_position = global_position
 
 #When time runs out set the speed back to its original value
 func _on_debuff_timer_timeout():
