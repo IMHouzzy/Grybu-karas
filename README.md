@@ -1,2 +1,2 @@
 # Grybu karas
- 
+"Grybų karas" is a pixelated 2D adventure game where the protagonist fights mushrooms. It starts with the easiest level and ends with the hardest one, where you fight a mushroom boss. The enemy grows stronger with each level and the protagonist can strengthen his attack by collecting bonuses, or weaken or even die if he is attacked by the enemy. The hero's life is visible and if it reaches 0, the character dies and the level must be restarted.
