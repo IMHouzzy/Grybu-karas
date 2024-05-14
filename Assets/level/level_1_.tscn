@@ -1098,7 +1098,7 @@ position = Vector2(1964, 482)
 position = Vector2(1918, 482)
 
 [node name="Coin12" parent="." instance=ExtResource("11_bwiin")]
-position = Vector2(2062, 321)
+position = Vector2(2072, 319)
 
 [node name="Coin13" parent="." instance=ExtResource("11_bwiin")]
 position = Vector2(2301, 321)
@@ -1126,3 +1126,6 @@ position = Vector2(1098, 457)
 
 [node name="TowerMushroom6" parent="." instance=ExtResource("12_hrm0h")]
 position = Vector2(4024, 324)
+
+[node name="TowerMushroom7" parent="." instance=ExtResource("12_hrm0h")]
+position = Vector2(508, 266)
