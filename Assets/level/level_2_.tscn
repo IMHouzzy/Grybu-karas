@@ -1,13 +1,21 @@
-[gd_scene load_steps=12 format=3 uid="uid://d2mvdpnv1bjqa"]
+[gd_scene load_steps=20 format=3 uid="uid://d2mvdpnv1bjqa"]
 
 [ext_resource type="PackedScene" uid="uid://c4gp86aacdhip" path="res://Assets/MainPlayer/Alien.tscn" id="1_05mjd"]
 [ext_resource type="Texture2D" uid="uid://c6y2pfok5efun" path="res://Assets/level/VibeLevel/tileset.png" id="2_t0dxe"]
 [ext_resource type="Texture2D" uid="uid://bx40ssxij3rms" path="res://Assets/level/VibeLevel/props.png" id="3_t1vb2"]
-[ext_resource type="Texture2D" uid="uid://c5nlboxacibb6" path="res://Assets/level/tutorial1/1 (3).png" id="4_l1ijb"]
+[ext_resource type="Texture2D" uid="uid://c5nlboxacibb6" path="res://Assets/level/1.png" id="4_l1ijb"]
 [ext_resource type="Texture2D" uid="uid://c361pamrm0kch" path="res://Assets/level/tutorial1/3.png" id="6_gxxlr"]
 [ext_resource type="Texture2D" uid="uid://dsr12g5yx3q2s" path="res://Assets/level/tutorial1/10.png" id="7_65uxc"]
 [ext_resource type="Texture2D" uid="uid://llj5k2mwtm02" path="res://Assets/level/tutorial1/5.png" id="8_btcmi"]
+[ext_resource type="PackedScene" uid="uid://sb5gtsjdo6mu" path="res://Assets/Weapons/Sword/pickup_sword.tscn" id="9_ci75n"]
 [ext_resource type="Texture2D" uid="uid://dftk1ctk23v4e" path="res://Assets/level/tutorial1/8.png" id="9_qn1i8"]
+[ext_resource type="PackedScene" uid="uid://jbjidyom5vnx" path="res://Assets/Collectables/Coin.tscn" id="10_dt8xf"]
+[ext_resource type="PackedScene" uid="uid://bu4k6mgydw5kn" path="res://Assets/HUDs/CoinHUD.tscn" id="11_1lwp2"]
+[ext_resource type="PackedScene" uid="uid://br1y52xgq4fuq" path="res://Assets/Enemies/purple_mushrrom.tscn" id="12_whmyu"]
+[ext_resource type="PackedScene" uid="uid://d176ig682bq0h" path="res://Assets/Enemies/tower_mushroom.tscn" id="13_k7j5h"]
+[ext_resource type="PackedScene" uid="uid://dmgdh7wyw5uux" path="res://Assets/Collectables/health_capacity_pu.tscn" id="14_su5ql"]
+[ext_resource type="PackedScene" uid="uid://ddvjh63sga1dt" path="res://Assets/Collectables/health_increase_pu.tscn" id="15_1tkud"]
+[ext_resource type="PackedScene" uid="uid://5pob72o6aehs" path="res://Assets/Collectables/damage_increase_pu.tscn" id="16_ibk13"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e1ffu"]
 texture = ExtResource("2_t0dxe")
@@ -918,10 +926,9 @@ sources/1 = SubResource("TileSetAtlasSource_6an3v")
 
 [node name="Level2" type="Node2D"]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_05mjd")]
-position = Vector2(90, 464)
+[node name="HUD" parent="." instance=ExtResource("11_1lwp2")]
 
-[node name="Camera2D2" type="Camera2D" parent="CharacterBody2D"]
+[node name="HUD2" parent="." instance=ExtResource("11_1lwp2")]
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -989,3 +996,190 @@ position = Vector2(790, 430)
 scale = Vector2(3, 3)
 texture = ExtResource("9_qn1i8")
 metadata/_edit_lock_ = true
+
+[node name="Pickup_sword" parent="." instance=ExtResource("9_ci75n")]
+position = Vector2(144, 470)
+
+[node name="Coin" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(191, 431)
+
+[node name="Coin3" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(465, 325)
+
+[node name="Coin4" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(565, 236)
+
+[node name="Coin5" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(728, 236)
+
+[node name="Coin6" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(394, 107)
+
+[node name="Coin7" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(106, 139)
+
+[node name="Coin8" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(647, 483)
+
+[node name="Coin9" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(864, 475)
+
+[node name="Coin10" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(1105, 473)
+
+[node name="Coin36" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(1162, 195)
+
+[node name="Coin37" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(1482, 75)
+
+[node name="Coin11" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(1421, 463)
+
+[node name="Coin12" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(1677, 462)
+
+[node name="Coin13" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(1867, 425)
+
+[node name="Coin14" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(2089, 323)
+
+[node name="Coin38" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(2045, 138)
+
+[node name="Coin39" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(2490, 41)
+
+[node name="Coin40" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(2536, 265)
+
+[node name="Coin15" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(2372, 313)
+
+[node name="Coin16" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(2509, 355)
+
+[node name="Coin17" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(2624, 445)
+
+[node name="Coin18" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(2799, 483)
+
+[node name="Coin19" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(2998, 481)
+
+[node name="Coin20" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(3183, 516)
+
+[node name="Coin21" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(3564, 413)
+
+[node name="Coin22" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(3739, 392)
+
+[node name="Coin23" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(3902, 311)
+
+[node name="Coin24" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(3684, 187)
+
+[node name="Coin25" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(3796, 106)
+
+[node name="Coin26" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(3932, 37)
+
+[node name="Coin27" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(4084, 34)
+
+[node name="Coin29" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(4420, 312)
+
+[node name="Coin30" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(4588, 482)
+
+[node name="Coin31" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(4924, 477)
+
+[node name="Coin32" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(5169, 357)
+
+[node name="Coin33" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(5072, 220)
+
+[node name="Coin34" parent="." instance=ExtResource("10_dt8xf")]
+position = Vector2(5172, 97)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_05mjd")]
+position = Vector2(90, 464)
+
+[node name="Camera2D2" type="Camera2D" parent="CharacterBody2D"]
+
+[node name="PurpleMushrrom" parent="." instance=ExtResource("12_whmyu")]
+position = Vector2(561, 486)
+
+[node name="PurpleMushrrom6" parent="." instance=ExtResource("12_whmyu")]
+position = Vector2(1206, 197)
+
+[node name="PurpleMushrrom2" parent="." instance=ExtResource("12_whmyu")]
+position = Vector2(2235, 327)
+
+[node name="PurpleMushrrom3" parent="." instance=ExtResource("12_whmyu")]
+position = Vector2(3598, 197)
+
+[node name="PurpleMushrrom4" parent="." instance=ExtResource("12_whmyu")]
+position = Vector2(4395, 487)
+
+[node name="PurpleMushrrom5" parent="." instance=ExtResource("12_whmyu")]
+position = Vector2(4860, 486)
+
+[node name="TowerMushroom" parent="." instance=ExtResource("13_k7j5h")]
+position = Vector2(692, 229)
+
+[node name="TowerMushroom3" parent="." instance=ExtResource("13_k7j5h")]
+position = Vector2(1536, 69)
+
+[node name="TowerMushroom4" parent="." instance=ExtResource("13_k7j5h")]
+position = Vector2(2702, 135)
+
+[node name="TowerMushroom6" parent="." instance=ExtResource("13_k7j5h")]
+position = Vector2(4182, 250)
+rotation = 3.14159
+
+[node name="TowerMushroom5" parent="." instance=ExtResource("13_k7j5h")]
+position = Vector2(1833, 39)
+
+[node name="TowerMushroom2" parent="." instance=ExtResource("13_k7j5h")]
+position = Vector2(1292, 442)
+rotation = 3.14159
+
+[node name="HealthCapacityPU" parent="." instance=ExtResource("14_su5ql")]
+position = Vector2(108, 95)
+
+[node name="HealthCapacityPU2" parent="." instance=ExtResource("14_su5ql")]
+position = Vector2(1735, 138)
+
+[node name="HealthCapacityPU3" parent="." instance=ExtResource("14_su5ql")]
+position = Vector2(3992, 26)
+
+[node name="HealthIncreasePU" parent="." instance=ExtResource("15_1tkud")]
+position = Vector2(274, 325)
+
+[node name="HealthIncreasePU2" parent="." instance=ExtResource("15_1tkud")]
+position = Vector2(1295, 358)
+
+[node name="HealthIncreasePU3" parent="." instance=ExtResource("15_1tkud")]
+position = Vector2(1627, 180)
+
+[node name="HealthIncreasePU4" parent="." instance=ExtResource("15_1tkud")]
+position = Vector2(2893, 73)
+
+[node name="HealthIncreasePU5" parent="." instance=ExtResource("15_1tkud")]
+position = Vector2(2852, 309)
+
+[node name="HealthIncreasePU6" parent="." instance=ExtResource("15_1tkud")]
+position = Vector2(3507, 189)
+
+[node name="damage_increase_pu" parent="." instance=ExtResource("16_ibk13")]
+position = Vector2(4342, 164)
