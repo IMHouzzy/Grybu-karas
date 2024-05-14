@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://5nl71n244ytl"]
+
+[ext_resource type="Script" path="res://Assets/Bosses/Boss1/bossbullet.gd" id="1_lbrpq"]
+[ext_resource type="Texture2D" uid="uid://cdy3etjvy4x3y" path="res://Assets/Nuotraukos/Details/Bullet3.png" id="2_5mpge"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ppfqf"]
+
+[node name="bossbullet" type="Area2D" groups=["EnemyBullet"]]
+script = ExtResource("1_lbrpq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.513667, 0.513667)
+texture = ExtResource("2_5mpge")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ppfqf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]

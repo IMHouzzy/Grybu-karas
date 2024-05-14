@@ -907,20 +907,19 @@ position = Vector2(161, 648)
 position = Vector2(165, 596)
 
 [node name="damage_increase_pu" parent="." instance=ExtResource("12_873rv")]
-position = Vector2(387, 580)
+position = Vector2(386, 550)
 
 [node name="invincibility_pu" parent="." instance=ExtResource("13_ff54s")]
-position = Vector2(426, 579)
+position = Vector2(420, 549)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_h65lq")]
 position = Vector2(311, 706)
 
 [node name="next_level_trigger" parent="." instance=ExtResource("14_bges8")]
-position = Vector2(83, 528)
+position = Vector2(206, 510)
 
 [node name="Pickup_pistol" parent="." instance=ExtResource("15_nsuwp")]
-visible = false
-position = Vector2(519, 600)
+position = Vector2(496, 629)
 
 [node name="LadyMushroom" parent="." instance=ExtResource("16_o6c4i")]
 position = Vector2(1557, 679)
@@ -932,10 +931,10 @@ position = Vector2(2082, 412)
 position = Vector2(998, 716)
 
 [node name="Pickup_sword" parent="." instance=ExtResource("19_2rqi7")]
-position = Vector2(135, 697)
+position = Vector2(530, 635)
 
 [node name="Pickup_bat" parent="." instance=ExtResource("20_gft40")]
-position = Vector2(626, 727)
+position = Vector2(581, 626)
 
 [node name="Pickup_axe" parent="." instance=ExtResource("21_7oyl5")]
-position = Vector2(352, 660)
+position = Vector2(400, 640)

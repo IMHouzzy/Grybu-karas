@@ -23,5 +23,5 @@ func _on_body_entered(body):
 		Global.collectedCurrency()
 		print(Global.currency) #Used for testing
 		set_visibility_layer_bit(0,false) #Makes it invisible so it works, but cant interact
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(0.4).timeout
 		queue_free()

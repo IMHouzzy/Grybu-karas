@@ -7,7 +7,7 @@ extends Control
 @onready var options_menu = $Options_Menu as OptionsMenu
 @onready var margin_container = $MarginContainer as MarginContainer
 
-@onready var start_level_1 = preload("res://Assets/level/level_1.tscn") as PackedScene
+@onready var start_level_1 = preload("res://Assets/level/level_1_.tscn") as PackedScene
 
 func _ready():
 	handle_connecting_signals()
