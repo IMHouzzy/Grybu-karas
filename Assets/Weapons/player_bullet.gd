@@ -13,7 +13,7 @@ func _on_Bullet_body_entered(body):
 		if body.is_in_group("Enemy"):
 			#Power up damage
 			if(Global.increasedDamage == true):
-				damage = 100
+				damage = 75
 				body.take_damage(damage)
 				print("Dealing damage: ", damage)
 			else:
