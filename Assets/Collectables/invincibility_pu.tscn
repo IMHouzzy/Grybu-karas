@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cecxupf52mgeg"]
 
-[ext_resource type="Texture2D" uid="uid://dcvoxnpdblrjt" path="res://Assets/Nuotraukos/Details/tempinvincible.png" id="1_cg6gd"]
 [ext_resource type="Script" path="res://Assets/Collectables/invincibility_pu.gd" id="1_juf2d"]
+[ext_resource type="Texture2D" uid="uid://dhikjb2b85djt" path="res://Assets/Nuotraukos/Details/Power-ups/Invincibility.png" id="2_c0svq"]
 [ext_resource type="AudioStream" uid="uid://bx8x8bwyjm2c1" path="res://Assets/Sound effects/power-up.mp3" id="3_stmn8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l6hir"]
@@ -11,8 +11,10 @@ size = Vector2(24, 23)
 script = ExtResource("1_juf2d")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.0277256, 0.0277256)
-texture = ExtResource("1_cg6gd")
+texture_filter = 1
+position = Vector2(-2.20537e-06, 1.13249e-06)
+scale = Vector2(0.555556, 0.555556)
+texture = ExtResource("2_c0svq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_l6hir")

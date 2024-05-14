@@ -95,9 +95,9 @@ collision_layer = 3
 script = ExtResource("1_wp7h1")
 
 [node name="heartsContainer" parent="." instance=ExtResource("2_rad1q")]
-offset_left = -60.0
+offset_left = -50.0
 offset_top = -190.0
-offset_right = 56.0
+offset_right = 66.0
 offset_bottom = -150.0
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]

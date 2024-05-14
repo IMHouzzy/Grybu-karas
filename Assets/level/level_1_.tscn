@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bhf1p366lxdsc"]
+[gd_scene load_steps=24 format=3 uid="uid://daxqlafs5blpr"]
 
 [ext_resource type="PackedScene" uid="uid://bu4k6mgydw5kn" path="res://Assets/HUDs/CoinHUD.tscn" id="1_t5aml"]
 [ext_resource type="Texture2D" uid="uid://c6y2pfok5efun" path="res://Assets/level/VibeLevel/tileset.png" id="2_0f3ym"]
