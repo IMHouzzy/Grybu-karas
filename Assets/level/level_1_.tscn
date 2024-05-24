@@ -1026,7 +1026,7 @@ position = Vector2(3194, 133)
 position = Vector2(3235, 558)
 
 [node name="SmokingMushroom" parent="." instance=ExtResource("14_gdhpb")]
-position = Vector2(862, 480)
+position = Vector2(904, 467)
 
 [node name="Pickup_bat" parent="." instance=ExtResource("15_5xhf3")]
 position = Vector2(215, 440)
