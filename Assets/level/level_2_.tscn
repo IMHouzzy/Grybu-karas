@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c4gp86aacdhip" path="res://Assets/MainPlayer/Alien.tscn" id="1_05mjd"]
 [ext_resource type="Texture2D" uid="uid://c6y2pfok5efun" path="res://Assets/level/VibeLevel/tileset.png" id="2_t0dxe"]
 [ext_resource type="Texture2D" uid="uid://bx40ssxij3rms" path="res://Assets/level/VibeLevel/props.png" id="3_t1vb2"]
-[ext_resource type="Texture2D" uid="uid://c5nlboxacibb6" path="res://Assets/level/tutorial1/1 (3).png" id="4_l1ijb"]
+[ext_resource type="Texture2D" uid="uid://c5nlboxacibb6" path="res://Assets/level/1.png" id="4_l1ijb"]
 [ext_resource type="Texture2D" uid="uid://c361pamrm0kch" path="res://Assets/level/tutorial1/3.png" id="6_gxxlr"]
 [ext_resource type="Texture2D" uid="uid://dsr12g5yx3q2s" path="res://Assets/level/tutorial1/10.png" id="7_65uxc"]
 [ext_resource type="Texture2D" uid="uid://llj5k2mwtm02" path="res://Assets/level/tutorial1/5.png" id="8_btcmi"]

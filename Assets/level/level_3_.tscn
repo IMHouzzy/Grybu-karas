@@ -983,9 +983,6 @@ position = Vector2(2871, 69)
 [node name="TowerMushroom3" parent="." instance=ExtResource("9_fpd5v")]
 position = Vector2(1764, 326)
 
-[node name="TowerMushroom4" parent="." instance=ExtResource("9_fpd5v")]
-position = Vector2(3365, 515)
-
 [node name="TowerMushroom5" parent="." instance=ExtResource("9_fpd5v")]
 position = Vector2(2545, 260)
 
@@ -1078,3 +1075,9 @@ position = Vector2(1478, 64)
 
 [node name="Pickup_uzi" parent="." instance=ExtResource("18_bdy12")]
 position = Vector2(4742, 130)
+
+[node name="HealthIncreasePU2" parent="." instance=ExtResource("15_4yk53")]
+position = Vector2(4000, 42)
+
+[node name="PurpleMushrrom4" parent="." instance=ExtResource("7_ika51")]
+position = Vector2(3290, 508)
