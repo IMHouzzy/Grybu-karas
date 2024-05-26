@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c0yd8jnyg3jkf"]
+[gd_scene load_steps=23 format=3 uid="uid://c0yd8jnyg3jkf"]
 
 [ext_resource type="PackedScene" uid="uid://bu4k6mgydw5kn" path="res://Assets/HUDs/CoinHUD.tscn" id="1_2xunb"]
 [ext_resource type="Texture2D" uid="uid://c6y2pfok5efun" path="res://Assets/level/VibeLevel/tileset.png" id="1_3byss"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://b702f8iwg4bet" path="res://Assets/Weapons/Axe/pickup_axe.tscn" id="16_4qanb"]
 [ext_resource type="PackedScene" uid="uid://c30s5p11f8ful" path="res://Assets/Weapons/Pistol/pickup_pistol.tscn" id="17_fcgdq"]
 [ext_resource type="PackedScene" uid="uid://cxeep4djkig6m" path="res://Assets/Weapons/Gun pickup/pickup_uzi.tscn" id="18_bdy12"]
+[ext_resource type="PackedScene" uid="uid://dwhiyo6eybyqu" path="res://Assets/level/next_level_trigger.tscn" id="19_wx3a3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e1ffu"]
 texture = ExtResource("1_3byss")
@@ -1081,3 +1082,6 @@ position = Vector2(4000, 42)
 
 [node name="PurpleMushrrom4" parent="." instance=ExtResource("7_ika51")]
 position = Vector2(3290, 508)
+
+[node name="next_level_trigger" parent="." instance=ExtResource("19_wx3a3")]
+position = Vector2(7618, 463)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cgly3k5oabvtt"]
+[gd_scene load_steps=25 format=3 uid="uid://cgly3k5oabvtt"]
 
 [ext_resource type="Texture2D" uid="uid://c6y2pfok5efun" path="res://Assets/level/VibeLevel/tileset.png" id="1_yh5sc"]
 [ext_resource type="Texture2D" uid="uid://bx40ssxij3rms" path="res://Assets/level/VibeLevel/props.png" id="2_s0h6g"]
@@ -8,6 +8,19 @@
 [ext_resource type="Texture2D" uid="uid://dyu6mx7ntggto" path="res://Assets/level/tutorial1/6.png" id="6_8xdy7"]
 [ext_resource type="Texture2D" uid="uid://llj5k2mwtm02" path="res://Assets/level/tutorial1/5.png" id="7_4n28k"]
 [ext_resource type="Texture2D" uid="uid://dftk1ctk23v4e" path="res://Assets/level/tutorial1/8.png" id="8_y760e"]
+[ext_resource type="PackedScene" uid="uid://jbjidyom5vnx" path="res://Assets/Collectables/Coin.tscn" id="9_1ygha"]
+[ext_resource type="PackedScene" uid="uid://c4gp86aacdhip" path="res://Assets/MainPlayer/Alien.tscn" id="10_uiql8"]
+[ext_resource type="PackedScene" uid="uid://d176ig682bq0h" path="res://Assets/Enemies/tower_mushroom.tscn" id="11_mgwg8"]
+[ext_resource type="PackedScene" uid="uid://br1y52xgq4fuq" path="res://Assets/Enemies/purple_mushrrom.tscn" id="12_p1app"]
+[ext_resource type="PackedScene" uid="uid://dmgdh7wyw5uux" path="res://Assets/Collectables/health_capacity_pu.tscn" id="13_yqwcx"]
+[ext_resource type="PackedScene" uid="uid://bforj53ek1esn" path="res://Assets/Enemies/lady_mushroom.tscn" id="14_73rai"]
+[ext_resource type="PackedScene" uid="uid://ddvjh63sga1dt" path="res://Assets/Collectables/health_increase_pu.tscn" id="15_xdeao"]
+[ext_resource type="PackedScene" uid="uid://e0cgfi7sailu" path="res://Assets/Enemies/basic_angry_shroom.tscn" id="16_x8skb"]
+[ext_resource type="PackedScene" uid="uid://bca8d81ssbwl3" path="res://Assets/Enemies/smoking_mushroom.tscn" id="17_faaap"]
+[ext_resource type="PackedScene" uid="uid://5pob72o6aehs" path="res://Assets/Collectables/damage_increase_pu.tscn" id="18_56sao"]
+[ext_resource type="PackedScene" uid="uid://cxeep4djkig6m" path="res://Assets/Weapons/Gun pickup/pickup_uzi.tscn" id="19_2onmc"]
+[ext_resource type="PackedScene" uid="uid://c30s5p11f8ful" path="res://Assets/Weapons/Pistol/pickup_pistol.tscn" id="20_vtvj8"]
+[ext_resource type="PackedScene" uid="uid://dwhiyo6eybyqu" path="res://Assets/level/next_level_trigger.tscn" id="21_wx81g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e1ffu"]
 texture = ExtResource("1_yh5sc")
@@ -929,6 +942,7 @@ metadata/_edit_lock_ = true
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scale = Vector2(0.7, 0.7)
 transform = Transform2D(0.7, 0, 0, 0.7, 0, 0)
+scroll_offset = Vector2(141.5, -358.972)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.5, 0.5)
@@ -996,3 +1010,195 @@ position = Vector2(790, 430)
 scale = Vector2(3, 3)
 texture = ExtResource("8_y760e")
 metadata/_edit_lock_ = true
+
+[node name="Coin" parent="." instance=ExtResource("9_1ygha")]
+position = Vector2(62, 326)
+
+[node name="Coin" parent="Coin" instance=ExtResource("9_1ygha")]
+position = Vector2(292, -125)
+
+[node name="Coin" parent="Coin/Coin" instance=ExtResource("9_1ygha")]
+position = Vector2(379, -90)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("10_uiql8")]
+position = Vector2(36, 454)
+
+[node name="TowerMushroom" parent="." instance=ExtResource("11_mgwg8")]
+position = Vector2(695, 101)
+
+[node name="TowerMushroom2" parent="." instance=ExtResource("11_mgwg8")]
+position = Vector2(561, 260)
+
+[node name="PurpleMushrrom" parent="." instance=ExtResource("12_p1app")]
+position = Vector2(158, 39)
+
+[node name="HealthCapacityPU" parent="." instance=ExtResource("13_yqwcx")]
+position = Vector2(-1, 34)
+
+[node name="Coin2" parent="." instance=ExtResource("9_1ygha")]
+position = Vector2(64, 35)
+
+[node name="Coin3" parent="." instance=ExtResource("9_1ygha")]
+position = Vector2(100, 35)
+
+[node name="LadyMushroom" parent="." instance=ExtResource("14_73rai")]
+position = Vector2(667, 493)
+
+[node name="TowerMushroom3" parent="." instance=ExtResource("11_mgwg8")]
+position = Vector2(1265, 391)
+
+[node name="HealthIncreasePU" parent="." instance=ExtResource("15_xdeao")]
+position = Vector2(1634, 37)
+
+[node name="BasicAngryShroom" parent="." instance=ExtResource("16_x8skb")]
+position = Vector2(1197, 470)
+
+[node name="SmokingMushroom" parent="." instance=ExtResource("17_faaap")]
+position = Vector2(2380, 479)
+
+[node name="LadyMushroom2" parent="." instance=ExtResource("14_73rai")]
+position = Vector2(3015, 172)
+
+[node name="TowerMushroom4" parent="." instance=ExtResource("11_mgwg8")]
+position = Vector2(1755, 196)
+
+[node name="TowerMushroom5" parent="." instance=ExtResource("11_mgwg8")]
+position = Vector2(2189, 224)
+
+[node name="LadyMushroom3" parent="." instance=ExtResource("14_73rai")]
+position = Vector2(3643, 432)
+
+[node name="PurpleMushrrom2" parent="." instance=ExtResource("12_p1app")]
+position = Vector2(2656, 194)
+
+[node name="PurpleMushrrom3" parent="." instance=ExtResource("12_p1app")]
+position = Vector2(3291, 60)
+
+[node name="TowerMushroom6" parent="." instance=ExtResource("11_mgwg8")]
+position = Vector2(1483, 191)
+
+[node name="PurpleMushrrom4" parent="." instance=ExtResource("12_p1app")]
+position = Vector2(2194, 67)
+
+[node name="damage_increase_pu" parent="." instance=ExtResource("18_56sao")]
+position = Vector2(1013, 35)
+
+[node name="BasicAngryShroom2" parent="." instance=ExtResource("16_x8skb")]
+position = Vector2(4496, 345)
+
+[node name="TowerMushroom7" parent="." instance=ExtResource("11_mgwg8")]
+position = Vector2(4880, 193)
+
+[node name="PurpleMushrrom5" parent="." instance=ExtResource("12_p1app")]
+position = Vector2(4986, 25)
+
+[node name="PurpleMushrrom6" parent="." instance=ExtResource("12_p1app")]
+position = Vector2(5266, 313)
+
+[node name="TowerMushroom8" parent="." instance=ExtResource("11_mgwg8")]
+position = Vector2(5562, 101)
+
+[node name="LadyMushroom4" parent="." instance=ExtResource("14_73rai")]
+position = Vector2(4838, 463)
+
+[node name="BasicAngryShroom3" parent="." instance=ExtResource("16_x8skb")]
+position = Vector2(5678, 473)
+
+[node name="TowerMushroom9" parent="." instance=ExtResource("11_mgwg8")]
+position = Vector2(3900, 33)
+
+[node name="SmokingMushroom2" parent="." instance=ExtResource("17_faaap")]
+position = Vector2(1177, 286)
+
+[node name="Coin4" parent="." instance=ExtResource("9_1ygha")]
+position = Vector2(1997, 234)
+
+[node name="Coin5" parent="." instance=ExtResource("9_1ygha")]
+position = Vector2(2109, 69)
+
+[node name="Coin6" parent="." instance=ExtResource("9_1ygha")]
+position = Vector2(2064, 71)
+
+[node name="Pickup_uzi" parent="." instance=ExtResource("19_2onmc")]
+position = Vector2(1833, 201)
+
+[node name="pickup_pistol" parent="." instance=ExtResource("20_vtvj8")]
+position = Vector2(4078, 44)
+
+[node name="Coin7" parent="." instance=ExtResource("9_1ygha")]
+position = Vector2(6381, 176)
+
+[node name="Coin8" parent="." instance=ExtResource("9_1ygha")]
+position = Vector2(6517, 295)
+
+[node name="Coin9" parent="." instance=ExtResource("9_1ygha")]
+position = Vector2(6757, 243)
+
+[node name="Coin10" parent="." instance=ExtResource("9_1ygha")]
+position = Vector2(6990, 135)
+
+[node name="Coin11" parent="." instance=ExtResource("9_1ygha")]
+position = Vector2(6898, 370)
+
+[node name="next_level_trigger" parent="." instance=ExtResource("21_wx81g")]
+position = Vector2(7179, 462)
+
+[node name="Coin12" parent="." instance=ExtResource("9_1ygha")]
+position = Vector2(5812, 166)
+
+[node name="Coin13" parent="." instance=ExtResource("9_1ygha")]
+position = Vector2(5756, 165)
+
+[node name="Coin14" parent="." instance=ExtResource("9_1ygha")]
+position = Vector2(5869, 165)
+
+[node name="HealthIncreasePU2" parent="." instance=ExtResource("15_xdeao")]
+position = Vector2(4113, 475)
+
+[node name="Coin15" parent="." instance=ExtResource("9_1ygha")]
+position = Vector2(3557, 192)
+
+[node name="Coin16" parent="." instance=ExtResource("9_1ygha")]
+position = Vector2(3617, 192)
+
+[node name="Coin17" parent="." instance=ExtResource("9_1ygha")]
+position = Vector2(3683, 193)
+
+[node name="Coin18" parent="." instance=ExtResource("9_1ygha")]
+position = Vector2(1443, 189)
+
+[node name="Coin19" parent="." instance=ExtResource("9_1ygha")]
+position = Vector2(1576, 28)
+
+[node name="Coin20" parent="." instance=ExtResource("9_1ygha")]
+position = Vector2(1796, 473)
+
+[node name="Coin21" parent="." instance=ExtResource("9_1ygha")]
+position = Vector2(2425, 298)
+
+[node name="Coin22" parent="." instance=ExtResource("9_1ygha")]
+position = Vector2(2376, 300)
+
+[node name="HealthIncreasePU3" parent="." instance=ExtResource("15_xdeao")]
+position = Vector2(2879, 37)
+
+[node name="damage_increase_pu2" parent="." instance=ExtResource("18_56sao")]
+position = Vector2(2337, 299)
+
+[node name="Coin23" parent="." instance=ExtResource("9_1ygha")]
+position = Vector2(3958, 313)
+
+[node name="Coin24" parent="." instance=ExtResource("9_1ygha")]
+position = Vector2(4005, 314)
+
+[node name="Coin25" parent="." instance=ExtResource("9_1ygha")]
+position = Vector2(4048, 319)
+
+[node name="HealthIncreasePU4" parent="." instance=ExtResource("15_xdeao")]
+position = Vector2(2957, 478)
+
+[node name="HealthIncreasePU5" parent="." instance=ExtResource("15_xdeao")]
+position = Vector2(3618, 152)
+
+[node name="HealthIncreasePU6" parent="." instance=ExtResource("15_xdeao")]
+position = Vector2(4694, 192)

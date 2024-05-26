@@ -155,6 +155,8 @@ func healthDamage(takenDamage: int):
 		updateHealthGUI()
 		if Global.currentHealth <= 0:
 			print("dead") #Change to quee free when respawn allowed
+			Global.currentHealth = 3
+			get_tree().change_scene_to_file("res://Assets/level/restart.tscn")
 
 #Takes damage when hit by bullet
 func _on_hurt_box_area_entered(area):
