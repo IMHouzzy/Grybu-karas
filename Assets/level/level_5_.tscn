@@ -1,10 +1,22 @@
-[gd_scene load_steps=9 format=3 uid="uid://bbrueg0qbxaol"]
+[gd_scene load_steps=21 format=3 uid="uid://bbrueg0qbxaol"]
 
 [ext_resource type="Texture2D" uid="uid://c6y2pfok5efun" path="res://Assets/level/VibeLevel/tileset.png" id="1_vaaxa"]
 [ext_resource type="Texture2D" uid="uid://bx40ssxij3rms" path="res://Assets/level/VibeLevel/props.png" id="2_43g8h"]
 [ext_resource type="Texture2D" uid="uid://dw8tdpgkjc0fv" path="res://Assets/level/tutorial1/2 (2).png" id="3_wll1j"]
 [ext_resource type="Texture2D" uid="uid://buw7sh5s6qn54" path="res://Assets/level/tutorial1/3(5).png" id="5_glyhn"]
+[ext_resource type="PackedScene" uid="uid://c4gp86aacdhip" path="res://Assets/MainPlayer/Alien.tscn" id="6_7cwpt"]
 [ext_resource type="Texture2D" uid="uid://uoqwvl6jhv0u" path="res://Assets/level/tutorial1/4(5).png" id="6_bnqtu"]
+[ext_resource type="PackedScene" uid="uid://bu4k6mgydw5kn" path="res://Assets/HUDs/CoinHUD.tscn" id="7_3xfvp"]
+[ext_resource type="PackedScene" uid="uid://c30s5p11f8ful" path="res://Assets/Weapons/Pistol/pickup_pistol.tscn" id="8_cmavl"]
+[ext_resource type="PackedScene" uid="uid://cxeep4djkig6m" path="res://Assets/Weapons/Gun pickup/pickup_uzi.tscn" id="9_ielmh"]
+[ext_resource type="PackedScene" uid="uid://d176ig682bq0h" path="res://Assets/Enemies/tower_mushroom.tscn" id="10_wmw5m"]
+[ext_resource type="PackedScene" uid="uid://br1y52xgq4fuq" path="res://Assets/Enemies/purple_mushrrom.tscn" id="11_d3yq8"]
+[ext_resource type="PackedScene" uid="uid://bforj53ek1esn" path="res://Assets/Enemies/lady_mushroom.tscn" id="12_qpe2l"]
+[ext_resource type="PackedScene" uid="uid://bca8d81ssbwl3" path="res://Assets/Enemies/smoking_mushroom.tscn" id="13_12jml"]
+[ext_resource type="PackedScene" uid="uid://jbjidyom5vnx" path="res://Assets/Collectables/Coin.tscn" id="14_q3hc5"]
+[ext_resource type="PackedScene" uid="uid://5pob72o6aehs" path="res://Assets/Collectables/damage_increase_pu.tscn" id="15_4bqxl"]
+[ext_resource type="PackedScene" uid="uid://ddvjh63sga1dt" path="res://Assets/Collectables/health_increase_pu.tscn" id="16_b76gt"]
+[ext_resource type="PackedScene" uid="uid://dmgdh7wyw5uux" path="res://Assets/Collectables/health_capacity_pu.tscn" id="17_wo0tq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e1ffu"]
 texture = ExtResource("1_vaaxa")
@@ -926,6 +938,7 @@ metadata/_edit_lock_ = true
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scale = Vector2(0.7, 0.7)
 transform = Transform2D(0.7, 0, 0, 0.7, 0, 0)
+scroll_offset = Vector2(141.5, -388.14)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.5, 0.5)
@@ -959,3 +972,230 @@ position = Vector2(790, 430)
 scale = Vector2(3, 3)
 texture = ExtResource("6_bnqtu")
 metadata/_edit_lock_ = true
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("6_7cwpt")]
+position = Vector2(38, 474)
+
+[node name="HUD" parent="." instance=ExtResource("7_3xfvp")]
+
+[node name="pickup_pistol" parent="." instance=ExtResource("8_cmavl")]
+position = Vector2(141, 480)
+
+[node name="Pickup_uzi" parent="." instance=ExtResource("9_ielmh")]
+position = Vector2(4300, 330)
+
+[node name="TowerMushroom" parent="." instance=ExtResource("10_wmw5m")]
+position = Vector2(546, 325)
+
+[node name="TowerMushroom2" parent="." instance=ExtResource("10_wmw5m")]
+position = Vector2(418, 163)
+
+[node name="TowerMushroom4" parent="." instance=ExtResource("10_wmw5m")]
+position = Vector2(842, 6)
+
+[node name="TowerMushroom3" parent="." instance=ExtResource("10_wmw5m")]
+position = Vector2(140, 37)
+
+[node name="PurpleMushrrom" parent="." instance=ExtResource("11_d3yq8")]
+position = Vector2(639, 72)
+
+[node name="PurpleMushrrom2" parent="." instance=ExtResource("11_d3yq8")]
+position = Vector2(1109, 295)
+
+[node name="LadyMushroom" parent="." instance=ExtResource("12_qpe2l")]
+position = Vector2(1863, 463)
+
+[node name="LadyMushroom2" parent="." instance=ExtResource("12_qpe2l")]
+position = Vector2(4679, 467)
+
+[node name="SmokingMushroom" parent="." instance=ExtResource("13_12jml")]
+position = Vector2(2451, 291)
+
+[node name="SmokingMushroom2" parent="." instance=ExtResource("13_12jml")]
+position = Vector2(3045, 478)
+
+[node name="SmokingMushroom3" parent="." instance=ExtResource("13_12jml")]
+position = Vector2(3882, 223)
+
+[node name="SmokingMushroom4" parent="." instance=ExtResource("13_12jml")]
+position = Vector2(4388, 318)
+
+[node name="SmokingMushroom5" parent="." instance=ExtResource("13_12jml")]
+position = Vector2(5768, 351)
+
+[node name="PurpleMushrrom3" parent="." instance=ExtResource("11_d3yq8")]
+position = Vector2(6067, 167)
+
+[node name="PurpleMushrrom4" parent="." instance=ExtResource("11_d3yq8")]
+position = Vector2(5474, 264)
+
+[node name="PurpleMushrrom5" parent="." instance=ExtResource("11_d3yq8")]
+position = Vector2(5333, 487)
+
+[node name="TowerMushroom5" parent="." instance=ExtResource("10_wmw5m")]
+position = Vector2(1589, 163)
+
+[node name="TowerMushroom6" parent="." instance=ExtResource("10_wmw5m")]
+position = Vector2(1793, 70)
+
+[node name="TowerMushroom7" parent="." instance=ExtResource("10_wmw5m")]
+position = Vector2(4860, 357)
+
+[node name="TowerMushroom8" parent="." instance=ExtResource("10_wmw5m")]
+position = Vector2(4856, 128)
+
+[node name="PurpleMushrrom6" parent="." instance=ExtResource("11_d3yq8")]
+position = Vector2(6687, 422)
+
+[node name="PurpleMushrrom7" parent="." instance=ExtResource("11_d3yq8")]
+position = Vector2(7010, 419)
+
+[node name="PurpleMushrrom8" parent="." instance=ExtResource("11_d3yq8")]
+position = Vector2(7337, 420)
+
+[node name="SmokingMushroom6" parent="." instance=ExtResource("13_12jml")]
+position = Vector2(6868, 480)
+
+[node name="SmokingMushroom7" parent="." instance=ExtResource("13_12jml")]
+position = Vector2(7206, 479)
+
+[node name="Coin" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(245, 492)
+
+[node name="Coin2" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(439, 491)
+
+[node name="Coin3" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(586, 337)
+
+[node name="Coin4" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(458, 177)
+
+[node name="Coin5" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(689, 80)
+
+[node name="Coin6" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(225, 51)
+
+[node name="Coin7" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(691, 523)
+
+[node name="Coin8" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(977, 357)
+
+[node name="Coin9" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(1415, 337)
+
+[node name="Coin10" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(1555, 155)
+
+[node name="Coin12" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(1958, 257)
+
+[node name="Coin13" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(1781, 484)
+
+[node name="Coin14" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(2143, 478)
+
+[node name="Coin15" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(2704, 479)
+
+[node name="Coin16" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(2694, 74)
+
+[node name="Coin17" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(3060, 133)
+
+[node name="Coin18" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(3323, 300)
+
+[node name="Coin19" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(3543, 388)
+
+[node name="Coin21" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(3941, 227)
+
+[node name="Coin22" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(4120, 77)
+
+[node name="Coin23" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(4386, 45)
+
+[node name="Coin24" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(4531, 204)
+
+[node name="Coin25" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(4815, 364)
+
+[node name="Coin26" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(4927, 141)
+
+[node name="Coin27" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(4604, 484)
+
+[node name="Coin28" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(5003, 480)
+
+[node name="Coin29" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(5445, 476)
+
+[node name="Coin30" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(5586, 257)
+
+[node name="Coin31" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(5744, 94)
+
+[node name="Coin32" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(5769, 493)
+
+[node name="Coin33" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(6111, 484)
+
+[node name="Coin34" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(5982, 167)
+
+[node name="Coin35" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(6207, 166)
+
+[node name="Coin37" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(6454, 32)
+
+[node name="Coin38" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(6841, 407)
+
+[node name="Coin39" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(7189, 406)
+
+[node name="Coin40" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(7493, 410)
+
+[node name="Coin36" parent="." instance=ExtResource("14_q3hc5")]
+position = Vector2(6348, 165)
+
+[node name="damage_increase_pu" parent="." instance=ExtResource("15_4bqxl")]
+position = Vector2(1368, 329)
+
+[node name="damage_increase_pu2" parent="." instance=ExtResource("15_4bqxl")]
+position = Vector2(6405, 38)
+
+[node name="HealthIncreasePU" parent="." instance=ExtResource("16_b76gt")]
+position = Vector2(3548, 163)
+
+[node name="HealthIncreasePU2" parent="." instance=ExtResource("16_b76gt")]
+position = Vector2(1398, 37)
+
+[node name="HealthIncreasePU3" parent="." instance=ExtResource("16_b76gt")]
+position = Vector2(1071, 482)
+
+[node name="HealthCapacityPU" parent="." instance=ExtResource("17_wo0tq")]
+position = Vector2(1627, 426)
+
+[node name="HealthCapacityPU2" parent="." instance=ExtResource("17_wo0tq")]
+position = Vector2(5880, 288)
+
+[node name="HealthCapacityPU3" parent="." instance=ExtResource("17_wo0tq")]
+position = Vector2(3321, 151)
+
+[node name="HealthIncreasePU4" parent="." instance=ExtResource("16_b76gt")]
+position = Vector2(636, 22)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://d2mvdpnv1bjqa"]
+[gd_scene load_steps=21 format=3 uid="uid://d2mvdpnv1bjqa"]
 
 [ext_resource type="PackedScene" uid="uid://c4gp86aacdhip" path="res://Assets/MainPlayer/Alien.tscn" id="1_05mjd"]
 [ext_resource type="Texture2D" uid="uid://c6y2pfok5efun" path="res://Assets/level/VibeLevel/tileset.png" id="2_t0dxe"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dmgdh7wyw5uux" path="res://Assets/Collectables/health_capacity_pu.tscn" id="14_su5ql"]
 [ext_resource type="PackedScene" uid="uid://ddvjh63sga1dt" path="res://Assets/Collectables/health_increase_pu.tscn" id="15_1tkud"]
 [ext_resource type="PackedScene" uid="uid://5pob72o6aehs" path="res://Assets/Collectables/damage_increase_pu.tscn" id="16_ibk13"]
+[ext_resource type="PackedScene" uid="uid://dwhiyo6eybyqu" path="res://Assets/level/next_level_trigger.tscn" id="17_va2hm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e1ffu"]
 texture = ExtResource("2_t0dxe")
@@ -1108,9 +1109,6 @@ position = Vector2(5169, 357)
 [node name="Coin33" parent="." instance=ExtResource("10_dt8xf")]
 position = Vector2(5072, 220)
 
-[node name="Coin34" parent="." instance=ExtResource("10_dt8xf")]
-position = Vector2(5172, 97)
-
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_05mjd")]
 position = Vector2(90, 464)
 
@@ -1183,3 +1181,6 @@ position = Vector2(3507, 189)
 
 [node name="damage_increase_pu" parent="." instance=ExtResource("16_ibk13")]
 position = Vector2(4342, 164)
+
+[node name="next_level_trigger" parent="." instance=ExtResource("17_va2hm")]
+position = Vector2(5172, 98)
